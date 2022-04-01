@@ -7,25 +7,29 @@ left to right direction
 :SNS User: as User
 :Center Coordinator: as CC
 
-Admin -- (UC1 - Configure and manage core information)
-Admin -- (UC2 - Register Centers, Users, center coordinators,\nreceptionists,nurses)
 
-Receptionists -- (UC3 - Register arrival of User)
-Receptionists -- (UC4 - Acknowledge system that the user\n is ready for vaccination)
+Admin -- (UC1 - Register Center)
+Admin -- (UC2 - Register User)
+Admin -- (UC3 - Register Center Coordinator)
+Admin -- (UC4 - Register Receptionist)
+Admin -- (UC5 - Register Nurse)
 
-Nurse -- (UC5 - Issue and Deliver vaccination certificate)
-Nurse -- (UC6 - Check list of Users present for vaccination)
-Nurse -- (UC7 - Check Users Info and health conditions)
-Nurse -- (UC8 - Register event in system)
+Receptionists -- (UC6 - Register arrival of User)
+Receptionists -- (UC7 - Acknowledge system that the user\n is ready for vaccination)
+
+Nurse -- (UC8 - Issue and Deliver vaccination certificate)
+Nurse -- (UC9 - Check list of Users present for vaccination)
+Nurse -- (UC10 - Check Users Info and health conditions)
+Nurse -- (UC11 - Register vaccination event)
 
 
-User -- (UC9 - Request Vaccination Certificate)
-User -- (UC10 - Schedule vaccination)
-User -- (UC11 - Authorize DGS to send SMS)
+User -- (UC12 - Request Vaccination Certificate)
+User -- (UC13 - Schedule vaccination)
+User -- (UC14 - Authorize DGS to send SMS)
 
 
-CC -- (UC12 - Manage Covid-19 Process)
-CC -- (UC13 - Monitor vaccination process)
+CC -- (UC15 - Manage Covid-19 Process)
+CC -- (UC16 - Monitor vaccination process)
 
 
 @enduml
