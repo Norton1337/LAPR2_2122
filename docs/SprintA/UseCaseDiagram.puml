@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+:Administrator: as Admin
+:Nurse:
+:Receptionists:
+:SNS User: as User
+:Center Coordinator: as CC
+
+Admin --> (Configure and manage core information)
+Admin -> (Register Centers, Users, center coordinators,\nreceptionists,nurses)
+
+Receptionists --> (Register arrival of User)
+Receptionists -> (Acknowledge system that the user\n is ready for vaccination)
+
+Nurse --> (Issue and Deliver vaccination certificate)
+Nurse -> (Check list of Users present for vaccination)
+Nurse ---> (Check Users Info and health conditions)
+Nurse -> (Register event in system)
+
+
+User --> (Request Vaccination Certificate)
+User -> (Schedule vaccination)
+User ---> (Authorize DGS to send SMS)
+
+
+CC -> (Manage Covid-19 Process)
+CC --> (Monitor vaccination process)
+
+
+@enduml

@@ -1,0 +1,90 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 3
+
+
+class Center {
+-test
+}
+
+class Coordinator{
+
+}
+
+class VaccinationCenter {
+
+
+}
+
+class Employee{
+
+}
+
+class HealthcareCenter{
+
+
+}
+
+class Nurse {
+
+
+}
+
+class Receptionist{
+
+}
+
+class Administrator{
+
+}
+
+class Schedule{
+}
+
+class SNSUser {
+
+}
+
+class VaccineType{
+
+
+}
+
+class Vaccine{
+
+
+}
+
+
+class VaccinationProcess{
+
+
+}
+
+Nurse "1" -- "1" Employee: is >
+Receptionist "1" -- "1" Employee: is >
+Receptionist "1" -- "1" Center: updates >
+Receptionist "*" -- "1" VaccinationProcess: updates >
+Nurse "*" -- "1" VaccinationProcess: updates >
+VaccinationCenter "1" -- "1" Center: is <
+HealthcareCenter "1" -- "1" Center: is <
+
+Center "1" -- "0..*" SNSUser: has >
+Center "1" -- "1" Coordinator: has >
+
+Coordinator "1" -- "1" VaccinationProcess: monitors >
+
+
+SNSUser "1" -- "*" Schedule: creates >
+Nurse "1" -- "*" Schedule: creates >
+Nurse "1" -- "*" SNSUser: updates >
+Schedule "1" -- "1" Center: has >
+SNSUser "1" - "0..*" Vaccine: gets >
+Administrator "1" -- "*" VaccineType: manages >
+Administrator "1" -- "*" Vaccine: manages >
+Administrator "1" -- "*" Center: manages >
+Administrator "1" -- "*" Employee: manages >
+
+Vaccine "1" -- "1" VaccineType: has >
+@enduml
