@@ -113,8 +113,10 @@ Receptionist "1" -- "*" Schedule: creates >
 
 
 Schedule "*" -- "1" VaccinationCenter: has <
+Schedule "*" -- "1" VaccineType: has >
 
 SNSUser "1" -- "*" Schedule: creates >
+SNSUser "1" -- "*" Vaccine: has >
 
 Administrator "1" -- "*" VaccinationCenter: manages >
 Administrator "1" -- "*" SNSUser: registers >
