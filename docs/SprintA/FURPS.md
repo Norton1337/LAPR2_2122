@@ -9,8 +9,21 @@ _Specifies functionalities that:_
 
 
 
-(fill in here)
+Security:
+ - Every user must authenticate with a password holding seven alphanumeric characters, including three capital letters and two digits.
+ - Only nurses are allowed to access all user's health data.
 
+Localization:
+- Application must support Portuguese and English languages.
+
+Email:
+- Service to notify via e-mail when the recovery period is over.
+
+Report:
+- Service to compare data from Vaccination Centers and generate Reports to the Center Coordinator.
+ 
+System Management:
+- FIFO queue to manage vaccination centers.
 
 
 ## Usability 
@@ -41,7 +54,8 @@ configurability, installability, scalability and more._
 
 
 
-(fill in here )
+Testability:
+- Use Junit5 and use JaCoCo plugin to track mutation and test coverage.
 
 
 ## +
@@ -49,9 +63,11 @@ configurability, installability, scalability and more._
 ### Design Constraints
 
 _Specifies or constraints the system design process. Examples may include: programming languages, software process, mandatory standards/patterns, use of development tools, class library, etc._
-  
 
-(fill in here )
+Design:
+- Object-Oriented design
+
+
 
 
 ### Implementation Constraints
@@ -60,8 +76,18 @@ _Specifies or constraints the code or construction of a system such
 such as: mandatory standards/patterns, implementation languages,
 database integrity, resource limits, operating system._
 
+Coding Standard:
+- Using CamelCase
 
-(fill in here )
+Mandatory standard:
+- Use svg format for all images and figures
+
+Implementation Language:
+- Java
+- JavaFX11
+
+
+
 
 
 ### Interface Constraints
