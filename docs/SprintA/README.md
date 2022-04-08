@@ -8,3 +8,9 @@ In this folder the team shoud collect and keep up-to-date all the artifacts deve
 The artifacts should be developed in accordance with the [template files](../(Templates)).
 
 **It is highly recommend to organize the content of each User Story on a dedicated sub-folder (e.g.: content related with US002 is located on a folder named "US001").**
+
+#SPRINT A:
+In this sprint, we had to develop documentation for the upcoming application, more specifically the Domain Model and FURPS+ to better understand the business and its rules.
+
+Also we had to configurate and organize certain adjecent apps, to better track and keep an acceptable workflow, apps such as bitbucket and Trello.
+
