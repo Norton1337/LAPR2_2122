@@ -10,33 +10,38 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Business Transactions**
 
-*
+* Vaccinate SNSUser and give him certificate
 
 ---
 
-**Transaction Line Itemss**
+**Transaction Line Items**
 
-*
+* Vaccine
+* DGS Vaccination Certificate
 
 ---
 
 **Product/Service related to a Transaction or Transaction Line Item**
 
-*  
+*  Vaccination Process
 
 ---
 
 
 **Transaction Records**
 
-*  
+*  SNSUser Vaccine Schedules
 
 ---  
 
 
 **Roles of People or Organizations**
 
-* 
+* Nurse
+* Receptionist
+* Coordinator
+* Administrator
+* SNSUser
 
 
 ---
@@ -44,20 +49,22 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Places**
 
-*  
+*  VaccinationCenter
 
 ---
 
-** Noteworthy Events**
+**Noteworthy Events**
 
-* 
+* Vaccination Process
+* Time interval between vaccinations
+* Recovery period after vaccination
 
 ---
 
 
 **Physical Objects**
 
-*
+* Vaccine
 
 ---
 
@@ -72,21 +79,21 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Catalogs**
 
-*  
+*  Vaccine Types and Vaccines
 
 ---
 
 
 **Containers**
 
-*  
+*  Vaccine contains a dosage
 
 ---
 
 
 **Elements of Containers**
 
-*  
+*  Dosage
 
 ---
 
@@ -130,13 +137,32 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 An association is a relationship between instances of objects that indicates a relevant connection and that is worth of remembering, or it is derivable from the List of Common Associations: 
 
-+ **_A_** is physically or logically part of **_B_**
-+ **_A_** is physically or logically contained in/on **_B_**
-+ **_A_** is a description for **_B_**
-+ **_A_** known/logged/recorded/reported/captured in **_B_**
-+ **_A_** uses or manages or owns **_B_**
-+ **_A_** is related with a transaction (item) of **_B_**
-+ etc.
++ **_Administrator_** manages **_Employee_**
++ **_Administrator_** manages **_Vaccine_**
++ **_Administrator_** manages **_VaccinationCenter_**
++ **_Administrator_** manages **_VaccineType_**
++ **_Administrator_** registers new **_SNSUser_**
++ **_Nurse_** is a part of **_Employee_**
++ **_Nurse_** updates **_SNSUser_**
++ **_Nurse_** updates **_VaccinationProcess_**
++ **_Coordinator_** monitors **_VaccinationProcess_**
++ **_VaccinationCenter_** has only one **_Coordinator_**
++ **_VaccinationCenter_** has multiple **_Employee_**
++ **_VaccinationCenter_** has multiple **_Schedule_**
++ **_VaccinationCenter_** has multiple **_SNSUser_**
++ **_Receptionist_** is a part of **_Employee_**
++ **_Receptionist_** updates **_VaccinationCenter_**
++ **_Receptionist_** creates new **_Schedule_**
++ **_Coordinator_** is a part of **_Employee_**
++ **_SNSUser_** has **_Vaccine_**
++ **_SNSUser_** creates **_Schedule_**
++ **_VaccineType_** has multiple **_Vaccine_**
++ **_VaccineType_** is in multiple **_Schedule_**
++ **_Vaccine_** has a **_VaccinationProcess_**
++ **_VaccinationProcess_** has multiple **_AgeGroup_**
++ **_AgeGroup_** has multiple **_dose_**
++ **_AgeGroup_** is associated to **_timeInterval_**
+
 
 
 
