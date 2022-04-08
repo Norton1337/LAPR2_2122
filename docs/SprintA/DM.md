@@ -160,16 +160,40 @@ An association is a relationship between instances of objects that indicates a r
 + **_VaccineType_** is in multiple **_Schedule_**
 + **_Vaccine_** has a **_VaccinationProcess_**
 + **_VaccinationProcess_** has multiple **_AgeGroup_**
-+ **_AgeGroup_** has multiple **_dose_**
-+ **_AgeGroup_** is associated to **_timeInterval_**
++ **_AgeGroup_** has multiple **_Dose_**
++ **_AgeGroup_** is associated to **_TimeInterval_**
 
 
 
 
-| Concept (A) 		|  Association   	|  Concept (B) |
-|----------	   		|:-------------:		|------:       |
-| C1  	| verb1    		 	| C2  |
-| ...  	| ...    		 	| ...  |
+| Concept (A) 		        |  Association   	  |        Concept (B) |
+|-----------------------|:-----------------:|-------------------:|
+| Administrator  	      |  manages    		 	  |           Employee |
+| Administrator  	      |  manages    		 	  |            Vaccine |
+| Administrator  	      |  manages    		 	  |  VaccinationCenter |
+| Administrator  	      |  manages    		 	  |        VaccineType |
+| Administrator  	      | registers    		 	 |            SNSUser |
+| Nurse  	              |    is    		 	     |           Employee |
+| Nurse  	              |  updates    		 	  |            SNSUser |
+| Nurse  	              |  updates    		 	  | VaccinationProcess |
+| Receptionist  	       |    is    		 	     |           Employee |
+| Receptionist  	       |  updates    		 	  |  VaccinationCenter |
+| Receptionist  	       |  creates    		 	  |           Schedule |
+| Coordinator  	        |    is    		 	     |           Employee |
+| Coordinator  	        | monitors    		 	  | VaccinationProcess |
+| VaccinationCenter  	  |    has    		 	    |        Coordinator |
+| VaccinationCenter  	  |    has    		 	    |           Employee |
+| VaccinationCenter  	  |    has    		 	    |           Schedule |
+| VaccinationCenter  	  |    has    		 	    |            SNSUser |
+| SNSUser  	            |    has    		 	    |            Vaccine |
+| SNSUser  	            |  creates    		 	  |           Schedule |
+| VaccineType  	        |    has    		 	    |            Vaccine |
+| Vaccine  	            |    has    		 	    | VaccinationProcess |
+| Schedule  	           |    has    		 	    |        VaccineType |
+| VaccinationProcess  	 |    has    		 	    |           AgeGroup |
+| AgeGroup  	           |    has    		 	    |               Dose |
+| AgeGroup  	           |    has    		 	    |       TimeInterval |
+
 
 
 

@@ -72,16 +72,16 @@ class VaccinationProcess{
     -recoveryPeriod
 }
 
-class ageGroup{
+class AgeGroup{
     -minAge
     -maxAge
 }
-class dose{
+class Dose{
     -doseNumber
     -dosage
 }
 
-class timeInterval{
+class TimeInterval{
     -numDays
 }
 
@@ -99,9 +99,9 @@ Receptionist "1" -- "1" VaccinationCenter: updates >
 
 Vaccine "1" -- "1" VaccinationProcess: has >
 Vaccine "*" -- "1" VaccineType: has <
-VaccinationProcess "1" -- "*" ageGroup: has >
-ageGroup "1" -- "*" dose: has >
-(ageGroup, dose) .. timeInterval
+VaccinationProcess "1" -- "*" AgeGroup: has >
+AgeGroup "1" -- "*" Dose: has >
+(AgeGroup, Dose) .. TimeInterval
 
 
 VaccinationCenter "1" -- "*" SNSUser: has >
