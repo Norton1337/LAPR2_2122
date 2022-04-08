@@ -10,21 +10,6 @@ class Coordinator{
 
 }
 
-class VaccinationCenter {
-    -name
-    -address
-    -phoneNumber
-    -emailAddress
-    -faxNumber
-    -websiteAddress
-    -openingHours
-    -closingHours
-    -slotDuration
-    -maxNumVaxPerSlot
-
-}
-
-
 class Nurse {
 
 
@@ -38,59 +23,103 @@ class Administrator{
 
 }
 
+
+class Employee{
+    -name
+    -phoneNumber
+    -emailAddress
+}
+
+class VaccinationCenter {
+    -name
+    -address
+    -phoneNumber
+    -emailAddress
+    -faxNumber
+    -websiteAddress
+    -openingHours
+    -closingHours
+    -slotDuration
+    -maxNumVaxPerSlot
+    -capacity
+
+}
+
 class Schedule{
+    -dateTime
 }
 
 class SNSUser {
-
+    -snsNumber
+    -name
+    -age
+    -phoneNum
+    -email
 }
 
 class VaccineType{
     -disease
-    -type
-    -minAge
-    -maxAge
-    -dosePerAgeGroup
-    -dosageML
-    -timeInterval
+
 }
 
 class Vaccine{
+    -name
     -lotNum
 }
 
 
 class VaccinationProcess{
-
-
-
+    -recoveryPeriod
 }
 
+class ageGroup{
+    -minAge
+    -maxAge
+}
+class dose{
+    -doseNumber
+    -dosage
+}
+
+class timeInterval{
+    -numDays
+}
+
+Employee "1" -- "1" Nurse: is <
+Employee "1" -- "1" Receptionist: is <
+Employee "1" -- "1" Coordinator: is <
+Administrator "1" -- "*" Employee: Manages >
+
+Employee "*" -- "*" VaccinationCenter: has <
+
 Nurse "*" -- "1" VaccinationProcess: updates >
-
-
-Receptionist "1" -- "1" VaccinationCenter: updates >
-Receptionist "*" -- "1" VaccinationProcess: updates >
-
-
-VaccinationCenter "1" -- "0..*" SNSUser: has >
-VaccinationCenter "1" -- "1" Coordinator: has >
-
-Coordinator "1" -- "1" VaccinationProcess: monitors >
-
-Nurse "1" -- "*" Schedule: creates >
 Nurse "1" -- "*" SNSUser: updates >
 
-Schedule "1" -- "1" VaccinationCenter: has >
+Receptionist "1" -- "1" VaccinationCenter: updates >
+
+Vaccine "1" -- "1" VaccinationProcess: has >
+Vaccine "*" -- "1" VaccineType: has <
+VaccinationProcess "1" -- "*" ageGroup: has >
+ageGroup "1" -- "*" dose: has >
+(ageGroup, dose) .. timeInterval
+
+
+VaccinationCenter "1" -- "*" SNSUser: has >
+VaccinationCenter "1" -- "1" Coordinator: has >
+
+Coordinator "1" -- "*" VaccinationProcess: monitors >
+
+Receptionist "1" -- "*" Schedule: creates >
+
+
+Schedule "*" -- "1" VaccinationCenter: has <
 
 SNSUser "1" -- "*" Schedule: creates >
-SNSUser "1" - "0..*" Vaccine: gets >
 
 Administrator "1" -- "*" VaccinationCenter: manages >
-Administrator "1" -- "*" Nurse: manages >
-Administrator "1" -- "*" Receptionist: manages >
-Administrator "1" -- "*" SNSUser: manages >
-Administrator "1" -- "*" Coordinator: manages >
+Administrator "1" -- "*" SNSUser: registers >
+Administrator "1" -- "*" Vaccine: manages >
+Administrator "1" -- "*" VaccineType: manages >
 
-Vaccine "1" -- "1" VaccineType: has >
+
 @enduml
