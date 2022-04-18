@@ -1,0 +1,23 @@
+@startuml
+autonumber
+actor "Administrator" as OE
+
+activate OE
+OE -> ":System" : Asks for the list of employees
+activate ":System"
+":System" --> OE : requests specific role
+deactivate ":System"
+
+OE -> ":System" : types requested data
+activate ":System"
+":System" --> OE : shows all data and requests confirmation
+deactivate ":System"
+
+OE -> ":System" : confirms the data
+activate ":System"
+":System" --> OE :>Shows list of employees
+deactivate ":System"
+
+deactivate OE
+
+@enduml
