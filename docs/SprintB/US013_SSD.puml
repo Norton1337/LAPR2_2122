@@ -1,0 +1,28 @@
+@startuml
+autonumber
+actor "Administrator" as OE
+
+activate OE
+OE -> ":System" : Starts to register a new Vaccine
+activate ":System"
+":System" --> OE : requests data (type,name,lot number)
+deactivate ":System"
+
+OE -> ":System" : types requested data
+activate ":System"
+":System" --> OE : shows all data and requests confirmation
+deactivate ":System"
+
+OE -> ":System" : confirms the data
+activate ":System"
+":System" --> OE : requests data (Administration process)
+deactivate ":System"
+OE -> ":System" : confirms the data
+activate ":System"
+
+":System" --> OE : informs operation success
+deactivate ":System"
+
+deactivate OE
+
+@enduml
