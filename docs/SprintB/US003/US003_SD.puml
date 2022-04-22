@@ -1,0 +1,39 @@
+@startuml
+autonumber
+'hide footbox
+actor "RECEPTIONIST" as ADM
+
+participant ":RegisterSNSUserUI" as UI
+participant ":SnsUserController" as CTRL
+participant "Company" as CMP
+participant "su: SnsUser" as DOMAIN
+
+activate ADM
+ADM -> UI : asks to register a new SNS user
+activate UI
+UI --> ADM : requests data (snsNumber,name,age,phoneNum,email)
+deactivate UI
+
+ADM -> UI : types requested data
+activate UI
+
+UI -> CTRL : user=registerUser(snsNumber,name,age,phoneNumber,email)
+activate CTRL
+activate CMP
+CTRL ->  CMP: snsUser=createUser(snsNumber,name,age,phoneNumber,email)
+
+
+create DOMAIN
+CMP-> DOMAIN : create(snsNumber,name,age,phoneNumber,email)
+deactivate CMP
+|||
+
+deactivate DOMAIN
+
+CTRL --> UI : Delivers user instance created
+deactivate CTRL
+
+UI-->ADM : Prints User information and informs user was created succesfully
+deactivate UI
+
+@enduml
