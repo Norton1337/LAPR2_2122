@@ -1,0 +1,36 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+
+class Receptionist {
+}
+
+class Company {
+  -designation
+  -authFacade
+}
+
+class snsUser {
+  -snsNumber
+  -name
+  -age
+  -phoneNumber
+  -email
+}
+
+class Employee {
+  -name
+  -phoneNumber
+  -email
+}
+
+Employee "1" -- "1" Receptionist: is <
+Company "1" -- "*" Employee: has >
+Receptionist "1" -- "*" snsUser: creates >
+Company "1" -- "*" snsUser: has >
+
+
+
+@enduml
