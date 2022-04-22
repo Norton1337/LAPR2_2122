@@ -1,5 +1,6 @@
 package app.ui.console;
 
+import app.ui.console.SnsUserUI.RegisterSNSUserUI;
 import app.ui.console.utils.Utils;
 
 import java.io.IOException;

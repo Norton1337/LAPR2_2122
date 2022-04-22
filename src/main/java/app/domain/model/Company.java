@@ -21,11 +21,21 @@ public class Company {
         this.authFacade = new AuthFacade();
     }
 
+    public Company() {
+
+    }
+
     public String getDesignation() {
         return designation;
     }
 
     public AuthFacade getAuthFacade() {
         return authFacade;
+    }
+
+
+    public SnsUser createsnsUser(int snsNumber, String name, int age, int phoneNumber, String email) {
+        SnsUser snsUser = new SnsUser(snsNumber, name, age, phoneNumber, email);
+        return snsUser;
     }
 }
