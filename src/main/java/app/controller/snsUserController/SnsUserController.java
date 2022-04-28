@@ -13,9 +13,16 @@ public class SnsUserController {
         return snsUser;
     }
 
-    public void addUserToList(SnsUser snsUser){
+    private void addUserToList(SnsUser snsUser){
         ArrayList snsUserList = new ArrayList();
         snsUserList.add(snsUser);
+
     }
 
+  /*  public void printUsers(ArrayList snsUserList){
+        for(int i=0; i<=snsUserList.size();i++ ) {
+            System.out.println(snsUserList.get(i));
+        }
+    }
+*/
 }
