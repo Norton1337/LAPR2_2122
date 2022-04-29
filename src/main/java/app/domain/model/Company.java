@@ -3,6 +3,9 @@ package app.domain.model;
 import pt.isep.lei.esoft.auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Paulo Maio <pam@isep.ipp.pt>
@@ -11,6 +14,9 @@ public class Company {
 
     private String designation;
     private AuthFacade authFacade;
+    private List<VaccineType> vaccineTypeList;
+    private List<Vaccine> vaccineList;
+
 
     public Company(String designation)
     {
@@ -22,6 +28,7 @@ public class Company {
     }
 
     public Company() {
+        vaccineTypeList = new ArrayList<>();
 
     }
 
@@ -38,4 +45,30 @@ public class Company {
         SnsUser snsUser = new SnsUser(snsNumber, name, age, phoneNumber, email);
         return snsUser;
     }
+
+    public VaccineType createVaccineType(String disease) {
+        VaccineType vaccineType = new VaccineType(disease);
+        this.vaccineTypeList.add(vaccineType);
+        return vaccineType;
+    }
+    public List<VaccineType> listVaccineTypes() {
+        return this.vaccineTypeList;
+    }
+    public Vaccine createVaccine(String name, int lotNumber,VaccineType vaccineType,VaccinationProcess vaccinationProcess) {
+        Vaccine vaccine = new Vaccine(name,lotNumber,vaccineType,vaccinationProcess);
+        this.vaccineList.add(vaccine);
+        return vaccine;
+    }
+    public List<Vaccine> listVaccine() {
+        return this.vaccineList;
+    }
+
+    public VaccinationProcess createVaccinationProcess(int recoveryPeriod, List<AgeGroup> ageGroupList){
+        return new VaccinationProcess(recoveryPeriod, ageGroupList);
+    }
+
+    public AgeGroup createAgeGroup(int minAge, int maxAge, int numDaysInterval){
+        return new AgeGroup(minAge,maxAge,new TimeInterval(numDaysInterval));
+    }
+
 }
