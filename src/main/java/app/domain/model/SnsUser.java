@@ -8,6 +8,7 @@ public class SnsUser {
     private String email;
 
     public SnsUser(int snsNumber, String name, int age, int phoneNumber, String email) {
+
         this.snsNumber = snsNumber;
         this.name = name;
         this.age = age;
