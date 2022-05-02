@@ -16,6 +16,8 @@ public class Company {
     private AuthFacade authFacade;
     private List<VaccineType> vaccineTypeList;
     private List<Vaccine> vaccineList;
+    private List<Employee> employeesList;
+    //private List<Employee> employeesWithSpecificRoleList;
 
 
     public Company(String designation)
@@ -69,6 +71,38 @@ public class Company {
 
     public AgeGroup createAgeGroup(int minAge, int maxAge, int numDaysInterval){
         return new AgeGroup(minAge,maxAge,new TimeInterval(numDaysInterval));
+    }
+
+    public Employee createEmployee(EmployeeRole role, String name, String address, String phoneNumber, String email,
+                                   int salary){
+        Employee employee = new Employee(role, name, address, phoneNumber, email, salary);
+        employeesList.add(employee);
+        return employee;
+    }
+
+    public List<Employee> showAllEmployees(){
+        return this.employeesList;
+    }
+
+    public List<Employee> showEmployeeWithSpecificRole(EmployeeRole employeeRole){
+
+        String role = employeeRole.getRole().toLowerCase();
+        List<Employee> employeesWithSpecificRoleList = new ArrayList<>();
+
+        for(Employee employee : employeesList){
+
+            String checkRole = employee.getEmployeeRole().getRole().toLowerCase();
+
+            if (checkRole.equals(role)){
+                employeesWithSpecificRoleList.add(employee);
+            }
+        }
+        return employeesWithSpecificRoleList;
+    }
+
+    public boolean checkEmployee(Employee employee){
+
+        return employeesList.contains(employee);
     }
 
 }
