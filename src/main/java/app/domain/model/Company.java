@@ -16,7 +16,7 @@ public class Company {
     private AuthFacade authFacade;
     private List<VaccineType> vaccineTypeList;
     private List<Vaccine> vaccineList;
-    private List<Employee> employeesList;
+    private List<Employee> employeesList = new ArrayList<>();
     //private List<Employee> employeesWithSpecificRoleList;
 
 
