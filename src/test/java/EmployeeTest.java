@@ -2,8 +2,7 @@ import app.controller.employeeController.EmployeeController;
 import app.domain.model.Company;
 import app.domain.model.Employee;
 import app.domain.model.EmployeeRole;
-import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 

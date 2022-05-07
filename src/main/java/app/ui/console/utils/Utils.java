@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,7 +20,7 @@ public class Utils {
     {
         try
         {
-            System.out.println("\n" + prompt);
+            System.out.println(prompt);
 
             InputStreamReader converter = new InputStreamReader(System.in);
             BufferedReader in = new BufferedReader(converter);
@@ -49,6 +50,7 @@ public class Utils {
             }
         } while (true);
     }
+
 
     static public double readDoubleFromConsole(String prompt)
     {

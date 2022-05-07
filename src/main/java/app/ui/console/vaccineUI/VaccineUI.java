@@ -23,7 +23,6 @@ public class VaccineUI implements Runnable{
     @Override
     public void run() {
 
-
         Scanner inInt = new Scanner(System.in);
         Scanner inString = new Scanner(System.in);
         System.out.println("\n\nVaccine UI\n\n");
