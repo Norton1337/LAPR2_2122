@@ -32,9 +32,10 @@ public class RegisterSNSUserUI implements Runnable{
                             SnsUser user = snsuserController.registerUser(snsNumber, name, age, phoneNumber, email);
                             System.out.println(user);
                             System.out.println("User registered succesfully");
+                            run();
                             break;
-            }while (option!=0);
-
+                    case 0: break;
+            }
 
     }
 }
