@@ -79,7 +79,6 @@ public class VaccineUI implements Runnable{
                 for (int j = 0; j < option3; j++) {
 
 
-                    int recoveryPeriod = inInt.nextInt();
                     System.out.println("What min age?");
                     int minAge = inInt.nextInt();
                     System.out.println("What max age?");
@@ -95,7 +94,7 @@ public class VaccineUI implements Runnable{
                 VaccinationProcess vaccinationProcess= vaccineController.createVaccinationProcess(recoveryPeriod, ageGroupList);
 
                 vaccineController.createVaccine(name,lotNumber,vaccineTypeList2.get(option2),vaccinationProcess);
-
+                option=0;
                 break;
 
         }while (option!=0);
