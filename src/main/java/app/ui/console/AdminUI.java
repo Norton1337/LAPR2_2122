@@ -1,6 +1,7 @@
 package app.ui.console;
 
 import app.ui.console.SnsUserUI.loadSnsUserUI;
+import app.ui.console.employeeUI.EmployeeUI;
 import app.ui.console.utils.Utils;
 import app.ui.console.vacCenterUI.VacCenterUI;
 import app.ui.console.vaccineUI.VaccineUI;
@@ -26,6 +27,7 @@ public class AdminUI implements Runnable{
         options.add(new MenuItem("Vaccine Type UI", new VaccineUI()));
         options.add(new MenuItem("Vaccination Center ", new VacCenterUI()));
         options.add(new MenuItem("Load users from CSV file ", new loadSnsUserUI()));
+        options.add(new MenuItem("Employees", new EmployeeUI()));
 
         int option = 0;
         do

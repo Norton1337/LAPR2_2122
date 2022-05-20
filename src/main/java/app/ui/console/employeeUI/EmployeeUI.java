@@ -1,6 +1,7 @@
 package app.ui.console.employeeUI;
 
 import app.controller.employeeController.EmployeeController;
+import app.domain.model.Company;
 import app.domain.model.Employee;
 import app.domain.model.EmployeeRole;
 import app.domain.model.SnsUser;
@@ -10,10 +11,10 @@ import java.util.Scanner;
 
 public class EmployeeUI implements Runnable {
 
-    EmployeeController employeeController;
+    EmployeeController employeeController = new EmployeeController(new Company());
 
-    public EmployeeUI(EmployeeController employeeController) {
-        this.employeeController = employeeController;
+    public EmployeeUI() {
+
     }
 
     public void run(){
@@ -46,6 +47,9 @@ public class EmployeeUI implements Runnable {
                 EmployeeRole employeeRole = new EmployeeRole(role);
 
                 Employee employee = new Employee(employeeRole, name, address, phoneNumber, email, salary);
+                System.out.println("----");
+                System.out.println(employeeController.checkIfEmployeeExists(employee));
+                System.out.println("----");
                 if (employeeController.checkIfEmployeeExists(employee)){
                     System.out.println("Employee already registered in the system");
                 }
@@ -60,11 +64,16 @@ public class EmployeeUI implements Runnable {
                 break;
             case 2:
                 System.out.println("Listing all employees.. \n");
+                if (!employeeController.listAllEmployees().isEmpty()){
+                    for (Employee employees : employeeController.listAllEmployees()){
 
-                for (Employee employees : employeeController.listAllEmployees()){
-
-                    System.out.println(employees.getName() +" - "+ employees.getEmployeeRole());
+                        System.out.println(employees.getName() +" - "+ employees.getEmployeeRole().getRole());
+                    }
                 }
+                else {
+                    System.out.println("List is empty");
+                }
+
                 option = 0;
                 break;
 

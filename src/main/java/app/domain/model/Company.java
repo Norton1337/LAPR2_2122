@@ -102,7 +102,12 @@ public class Company {
 
     public boolean checkEmployee(Employee employee){
 
-        return employeesList.contains(employee);
+        for (Employee employee1 : employeesList){
+            if (employee1.equals(employee)){
+                return true;
+            }
+        }
+        return false;
     }
 
 }
