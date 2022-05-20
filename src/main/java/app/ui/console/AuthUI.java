@@ -1,6 +1,7 @@
 package app.ui.console;
 
 import app.controller.AuthController;
+import app.domain.model.Company;
 import app.domain.shared.Constants;
 import app.ui.console.SnsUserUI.RegisterSNSUserUI;
 import app.ui.console.utils.Utils;
@@ -19,10 +20,11 @@ import java.util.Objects;
 
 public class AuthUI implements Runnable{
     private AuthController ctrl;
-
-    public AuthUI()
+    private Company company;
+    public AuthUI(Company company)
     {
         ctrl = new AuthController();
+        this.company=company;
     }
 
     public void run()
@@ -56,9 +58,8 @@ public class AuthUI implements Runnable{
     private List<MenuItem> getMenuItemForRoles()
     {
         List<MenuItem> rolesUI = new ArrayList<>();
-        rolesUI.add(new MenuItem(Constants.ROLE_ADMIN, new AdminUI()));
-        rolesUI.add(new MenuItem(Constants.ROLE_RECEPTIONIST,new RegisterSNSUserUI()));
-        rolesUI.add(new MenuItem(Constants.ROLE_ADMIN,new VaccineUI()));
+        rolesUI.add(new MenuItem(Constants.ROLE_ADMIN, new AdminUI(company)));
+        rolesUI.add(new MenuItem(Constants.ROLE_RECEPTIONIST,new RegisterSNSUserUI(company)));
 
         //
         return rolesUI;

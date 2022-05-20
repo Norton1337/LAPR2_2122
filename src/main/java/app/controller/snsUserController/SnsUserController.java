@@ -6,8 +6,13 @@ import app.domain.model.SnsUser;
 import java.util.ArrayList;
 
 public class SnsUserController {
+    Company company;
+    public SnsUserController(Company company) {
+        this.company=company;
+    }
+
     public SnsUser registerUser(int snsNumber, String name, int age, int phoneNumber, String email) {
-        Company company = new Company();
+
         SnsUser snsUser= company.createsnsUser(snsNumber,name,age,phoneNumber,email);
         addUserToList(snsUser);
         return snsUser;

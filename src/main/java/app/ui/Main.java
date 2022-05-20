@@ -1,5 +1,6 @@
 package app.ui;
 
+import app.domain.model.Company;
 import app.ui.console.MainMenuUI;
 
 /**
@@ -14,6 +15,7 @@ public class Main {
     {
         try
         {
+
             MainMenuUI menu = new MainMenuUI();
 
             menu.run();

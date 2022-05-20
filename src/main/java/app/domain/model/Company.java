@@ -15,8 +15,10 @@ public class Company {
     private String designation;
     private AuthFacade authFacade;
     private List<VaccineType> vaccineTypeList;
-    private List<Vaccine> vaccineList = new ArrayList<>();
-    private List<Employee> employeesList = new ArrayList<>();
+    private List<Vaccine> vaccineList;
+    private List<Employee> employeesList;
+    private List<VacCenter> vacCenterList;
+    private List<SnsUser> snsUserList;
     //private List<Employee> employeesWithSpecificRoleList;
 
 
@@ -31,7 +33,10 @@ public class Company {
 
     public Company() {
         vaccineTypeList = new ArrayList<>();
-
+        vaccineList = new ArrayList<>();
+        employeesList = new ArrayList<>();
+        vacCenterList = new ArrayList<>();
+        snsUserList = new ArrayList<>();
     }
 
     public String getDesignation() {
@@ -45,6 +50,7 @@ public class Company {
 
     public SnsUser createsnsUser(int snsNumber, String name, int age, int phoneNumber, String email) {
         SnsUser snsUser = new SnsUser(snsNumber, name, age, phoneNumber, email);
+        this.snsUserList.add(snsUser);
         return snsUser;
     }
 
@@ -63,6 +69,10 @@ public class Company {
     }
     public List<Vaccine> listVaccine() {
         return this.vaccineList;
+    }
+
+    public List<SnsUser> listSnsUser() {
+        return this.snsUserList;
     }
 
     public VaccinationProcess createVaccinationProcess(int recoveryPeriod, List<AgeGroup> ageGroupList){
@@ -110,4 +120,13 @@ public class Company {
         return false;
     }
 
+    public VacCenter createVaccinationCenter(String name, String address, String phoneNumber, String faxNumber, String website, int openingHour, int closingHour, int slotDuration, int maxVaccines) {
+        VacCenter vacCenter = new VacCenter(name, address, phoneNumber, faxNumber, website, openingHour, closingHour, slotDuration, maxVaccines);
+        vacCenterList.add(vacCenter);
+        return vacCenter;
+    }
+
+    public List<VacCenter> showAllVacCenters() {
+        return this.vacCenterList;
+    }
 }

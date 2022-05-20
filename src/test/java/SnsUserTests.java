@@ -1,11 +1,12 @@
 import app.controller.snsUserController.SnsUserController;
+import app.domain.model.Company;
 import app.domain.model.SnsUser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class SnsUserTests {
-
-    SnsUserController snsUserController = new SnsUserController();
+    Company company = new Company();
+    SnsUserController snsUserController = new SnsUserController(company);
 
     @Test
     public void ensureSNSnumberIsRegistered(){

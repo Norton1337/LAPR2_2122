@@ -1,0 +1,41 @@
+@startuml
+autonumber
+
+actor "Administrator" as ADM
+
+participant ":VaccineUI" as UI
+participant ":VaccineController" as CTRL
+participant ":Company" as ORG
+participant ":VaccineTypes" as VACTYPE
+
+activate ADM
+ADM -> UI : Starts to register a new Vaccine Type
+activate UI
+UI --> ADM : requests data (disease)
+deactivate UI
+
+ADM -> UI : types requested data
+activate UI
+UI -> CTRL: createVaccineType(disease)
+activate CTRL
+CTRL -> ORG: createVaccineType(disease)
+activate ORG
+ORG -> VACTYPE **: create
+
+ORG --> CTRL: result
+deactivate ORG
+
+CTRL --> UI: result
+deactivate CTRL
+UI --> ADM : shows all data and requests confirmation
+deactivate UI
+
+ADM -> UI : confirms the data
+activate UI
+UI --> ADM : informs operation success
+deactivate UI
+
+deactivate ADM
+
+
+@enduml

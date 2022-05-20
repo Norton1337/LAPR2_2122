@@ -1,16 +1,23 @@
 package app.ui.console.SnsUserUI;
 
 import app.controller.snsUserController.SnsUserController;
+import app.domain.model.Company;
 import app.domain.model.SnsUser;
 
 import java.util.Scanner;
 
 public class RegisterSNSUserUI implements Runnable{
+        Company company;
+        SnsUserController snsuserController;
+        public RegisterSNSUserUI(Company company) {
+                this.company=company;
+                this.snsuserController = new SnsUserController(this.company);
+        }
 
-    @Override
+        @Override
     public void run() {
 
-            SnsUserController snsuserController = new SnsUserController();
+
             Scanner inInt = new Scanner(System.in);
             Scanner inString = new Scanner(System.in);
             System.out.println("\n\n RECEPTIONIST UI\n\n");

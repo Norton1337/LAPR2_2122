@@ -1,10 +1,7 @@
 package app.ui.console.vaccineUI;
 
 import app.controller.vaccineController.VaccineController;
-import app.domain.model.AgeGroup;
-import app.domain.model.Dose;
-import app.domain.model.VaccinationProcess;
-import app.domain.model.VaccineType;
+import app.domain.model.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,12 +9,12 @@ import java.util.Scanner;
 
 public class VaccineUI implements Runnable{
     VaccineController vaccineController;
-    public VaccineUI(){
-        this.vaccineController = new VaccineController();
-    }
+    Company company;
 
-    public VaccineUI(VaccineController vaccineController){
-        this.vaccineController = vaccineController;
+
+    public VaccineUI(Company company) {
+        this.vaccineController = new VaccineController(company);
+        this.company=company;
     }
 
     @Override

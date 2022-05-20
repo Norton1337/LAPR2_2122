@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1144.8px" preserveAspectRatio="none" style="width:428px;height:1144px;background:#FFFFFF;" version="1.1" viewBox="0 0 428 1144" width="428px" zoomAndPan="magnify"><defs><filter height="300%" id="f1bnppy8wzfwvt" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="1.6000000000000003"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="3.2000000000000006" dy="3.2000000000000006" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[97ab183161fd5d1db7fba7485cf76add]
+entity Admin--><ellipse cx="53.6" cy="962" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="6.4" ry="6.4" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><path d="M53.6,968.4 L53.6,990 M43.2,974.8 L64,974.8 M53.6,990 L43.2,1002 M53.6,990 L64,1002 " fill="none" filter="url(#f1bnppy8wzfwvt)" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="66.4" x="20.4" y="1018.0266">Administrator</text><!--MD5=[c8b2cb7ab209025f476c1467c68b906a]
+entity Nurse--><ellipse cx="53.6" cy="649.2" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="6.4" ry="6.4" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><path d="M53.6,655.6 L53.6,677.2 M43.2,662 L64,662 M53.6,677.2 L43.2,689.2 M53.6,677.2 L64,689.2 " fill="none" filter="url(#f1bnppy8wzfwvt)" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="29.6" x="38.8" y="705.2266">Nurse</text><!--MD5=[fddc9dd69bf706990050a33f5f6a7b20]
+entity Receptionists--><ellipse cx="53.6" cy="400.4" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="6.4" ry="6.4" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><path d="M53.6,406.8 L53.6,428.4 M43.2,413.2 L64,413.2 M53.6,428.4 L43.2,440.4 M53.6,428.4 L64,440.4 " fill="none" filter="url(#f1bnppy8wzfwvt)" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="68" x="19.6" y="456.4266">Receptionists</text><!--MD5=[fee662a292a0353a69bd162820bae93b]
+entity User--><ellipse cx="53.6" cy="221.2" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="6.4" ry="6.4" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><path d="M53.6,227.6 L53.6,249.2 M43.2,234 L64,234 M53.6,249.2 L43.2,261.2 M53.6,249.2 L64,261.2 " fill="none" filter="url(#f1bnppy8wzfwvt)" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="48" x="29.6" y="277.2266">SNS User</text><!--MD5=[36dc586d67e0f1d076b0ce70c9875d3e]
+entity CC--><ellipse cx="53.6" cy="38" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="6.4" ry="6.4" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><path d="M53.6,44.4 L53.6,66 M43.2,50.8 L64,50.8 M53.6,66 L43.2,78 M53.6,66 L64,78 " fill="none" filter="url(#f1bnppy8wzfwvt)" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="97.6" x="4.8" y="94.0266">Center Coordinator</text><ellipse cx="284.2638" cy="862.0528" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="72.6638" ry="16.4528" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="112" x="228.2638" y="865.0356">UC1 - Register Center</text><ellipse cx="284.2782" cy="921.8956" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="67.8782" ry="15.4956" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="100.8" x="233.8782" y="924.8785">UC2 - Register User</text><ellipse cx="284.4844" cy="987.7769" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="101.2844" ry="22.1769" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="175.2" x="196.8844" y="990.7597">UC3 - Register Center Coordinator</text><ellipse cx="284.2765" cy="1056.5353" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="85.0765" ry="18.9353" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="140" x="214.2765" y="1059.5181">UC4 - Register Receptionist</text><ellipse cx="284.5977" cy="1119.6395" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="70.5977" ry="16.0395" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="107.2" x="230.9977" y="1122.6223">UC5 - Register Nurse</text><ellipse cx="284.3122" cy="387.6624" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="88.7122" ry="19.6624" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="148" x="210.3122" y="390.6453">UC6 - Register arrival of User</text><ellipse cx="284.3362" cy="463.5872" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="130.3362" ry="27.9872" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="204" x="182.3362" y="459.5263">UC7 - Acknowledge system that the user</text><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="116.8" x="227.5362" y="473.6138">is ready for vaccination</text><ellipse cx="284.2453" cy="547.4891" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="127.8453" ry="27.4891" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="231.2" x="168.6453" y="550.4719">UC8 - Issue and Deliver vaccination certificate</text><ellipse cx="284.4002" cy="632.32" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="134.0002" ry="28.72" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="244" x="162.4002" y="635.3028">UC9 - Check list of Users present for vaccination</text><ellipse cx="284.5661" cy="717.0732" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="129.7661" ry="27.8732" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="235.2" x="166.9661" y="720.056">UC10 - Check Users Info and health conditions</text><ellipse cx="284.591" cy="795.4782" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="99.791" ry="21.8782" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="172" x="198.591" y="798.461">UC11 - Register vaccination event</text><ellipse cx="284.244" cy="174.6088" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="111.444" ry="24.2088" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="196.8" x="185.844" y="177.5916">UC12 - Request Vaccination Certificate</text><ellipse cx="284.4181" cy="246.6436" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="87.6181" ry="19.4436" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="145.6" x="211.6181" y="249.6264">UC13 - Schedule vaccination</text><ellipse cx="284.3306" cy="317.0261" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="103.5306" ry="22.6261" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="180" x="194.3306" y="320.0089">UC14 - Authorize DGS to send SMS</text><ellipse cx="284.591" cy="26.6782" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="99.791" ry="21.8782" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="172" x="198.591" y="29.661">UC15 - Manage Covid-19 Process</text><ellipse cx="284.3557" cy="99.7511" fill="#FEFECE" filter="url(#f1bnppy8wzfwvt)" rx="103.1557" ry="22.5511" style="stroke:#A80036;stroke-width:1.2000000000000002;"/><text fill="#000000" font-family="sans-serif" font-size="11.2" lengthAdjust="spacing" textLength="179.2" x="194.7557" y="102.734">UC16 - Monitor vaccination process</text><!--MD5=[d5c4baa6b60645567ae57cf1eeb038eb]
+link Admin to UC1 - Register Center--><path d="M79.664,954.368 C97.272,933.496 122.528,907.728 150.4,892.4 C171.288,880.912 196.304,873.76 218.984,869.312 " fill="none" id="Admin-UC1 - Register Center" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[09c59172ae0775d448c51252c07e30a8]
+link Admin to UC2 - Register User--><path d="M86.896,974.12 C105.312,966.808 128.904,957.984 150.4,951.6 C176.744,943.776 206.56,936.968 231.296,931.856 " fill="none" id="Admin-UC2 - Register User" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[da511092f70160a31d9c523a203b0b0b]
+link Admin to UC3 - Register Center Coordinator--><path d="M86.992,987.6 C112.208,987.6 148.544,987.6 183.128,987.6 " fill="none" id="Admin-UC3 - Register Center Coordinator" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[1fdce93827f6d962030b206fdd6e255a]
+link Admin to UC4 - Register Receptionist--><path d="M86.952,1000.896 C105.384,1008.144 128.976,1016.968 150.4,1023.6 C174.064,1030.92 200.48,1037.712 223.512,1043.184 " fill="none" id="Admin-UC4 - Register Receptionist" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[2cce62ef7424578b7f029322c580ee72]
+link Admin to UC5 - Register Nurse--><path d="M77.496,1020.896 C94.952,1043.544 120.904,1072.344 150.4,1089.2 C171.512,1101.264 197.072,1108.536 220.128,1112.928 " fill="none" id="Admin-UC5 - Register Nurse" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[44dcb991e3c135856d0b980b18c3889d]
+link Receptionists to UC6 - Register arrival of User--><path d="M87.728,420.416 C120.504,414.928 171.56,406.368 213.32,399.376 " fill="none" id="Receptionists-UC6 - Register arrival of User" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[983e609410c55e7ff4920c8e0cea02f2]
+link Receptionists to UC7 - Acknowledge system that the user\n is ready for vaccination--><path d="M87.728,431.464 C112.248,435.488 147,441.192 180.432,446.672 " fill="none" id="Receptionists-UC7 - Acknowledge system that the user\n is ready for vaccination" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[a5988dfef216c8fda22223242f2160b3]
+link Nurse to UC8 - Issue and Deliver vaccination certificate--><path d="M68.488,658.832 C85.968,639.928 117.512,608.648 150.4,590 C165.6,581.384 182.784,574.256 199.64,568.464 " fill="none" id="Nurse-UC8 - Issue and Deliver vaccination certificate" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[0ab7e48b6ff73cdaaec8cf7ff6a8a023]
+link Nurse to UC9 - Check list of Users present for vaccination--><path d="M68.736,672.144 C91.624,667.912 138.32,659.272 182.352,651.128 " fill="none" id="Nurse-UC9 - Check list of Users present for vaccination" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[75e3e6ae4a92b11e44f1efc52c796295]
+link Nurse to UC10 - Check Users Info and health conditions--><path d="M68.736,677.456 C92.16,681.784 140.536,690.736 185.464,699.048 " fill="none" id="Nurse-UC10 - Check Users Info and health conditions" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[c64c35dbfac2cefd4893f9ca7c2ce4c2]
+link Nurse to UC11 - Register vaccination event--><path d="M68.664,691.352 C86.072,710.536 117.304,741.792 150.4,759.6 C168.016,769.08 188.304,776.208 207.656,781.504 " fill="none" id="Nurse-UC11 - Register vaccination event" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[d49fa59d8a562dedede8d8a7d6e8fa40]
+link User to UC12 - Request Vaccination Certificate--><path d="M77.944,238.144 C97.304,231.128 125.504,221.136 150.4,213.2 C171.152,206.584 193.88,199.848 214.584,193.896 " fill="none" id="User-UC12 - Request Vaccination Certificate" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[5f521dc69b4ffb7a68d494810e592e51]
+link User to UC13 - Schedule vaccination--><path d="M77.64,246.8 C105.52,246.8 153.88,246.8 196.736,246.8 " fill="none" id="User-UC13 - Schedule vaccination" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[fd2e4fb49f0cfdcfbfcc9f26bc6da639]
+link User to UC14 - Authorize DGS to send SMS--><path d="M77.92,255.528 C97.272,262.592 125.456,272.6 150.4,280.4 C172.04,287.168 195.848,293.952 217.288,299.824 " fill="none" id="User-UC14 - Authorize DGS to send SMS" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[98a586f7a73d7d06dc491448f8508ceb]
+link CC to UC15 - Manage Covid-19 Process--><path d="M102.448,55.888 C131.656,51.2 169.688,45.088 203.36,39.68 " fill="none" id="CC-UC15 - Manage Covid-19 Process" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[7971e2889ccf2669120a15dba52fdc32]
+link CC to UC16 - Monitor vaccination process--><path d="M102.448,71.144 C130.8,75.6 167.472,81.36 200.4,86.528 " fill="none" id="CC-UC16 - Monitor vaccination process" style="stroke:#A80036;stroke-width:0.8000000000000002;"/><!--MD5=[fa9787d3f619fc60b0ec50d85ac3007c]
+@startuml
+'https://plantuml.com/use-case-diagram
+left to right direction
+:Administrator: as Admin
+:Nurse:
+:Receptionists:
+:SNS User: as User
+:Center Coordinator: as CC
+
+
+Admin - - (UC1 - Register Center)
+Admin - - (UC2 - Register User)
+Admin - - (UC3 - Register Center Coordinator)
+Admin - - (UC4 - Register Receptionist)
+Admin - - (UC5 - Register Nurse)
+
+Receptionists - - (UC6 - Register arrival of User)
+Receptionists - - (UC7 - Acknowledge system that the user\n is ready for vaccination)
+
+Nurse - - (UC8 - Issue and Deliver vaccination certificate)
+Nurse - - (UC9 - Check list of Users present for vaccination)
+Nurse - - (UC10 - Check Users Info and health conditions)
+Nurse - - (UC11 - Register vaccination event)
+
+
+User - - (UC12 - Request Vaccination Certificate)
+User - - (UC13 - Schedule vaccination)
+User - - (UC14 - Authorize DGS to send SMS)
+
+
+CC - - (UC15 - Manage Covid-19 Process)
+CC - - (UC16 - Monitor vaccination process)
+
+
+@enduml
+
+@startuml
+left to right direction
+:Administrator: as Admin
+:Nurse:
+:Receptionists:
+:SNS User: as User
+:Center Coordinator: as CC
+
+
+Admin - - (UC1 - Register Center)
+Admin - - (UC2 - Register User)
+Admin - - (UC3 - Register Center Coordinator)
+Admin - - (UC4 - Register Receptionist)
+Admin - - (UC5 - Register Nurse)
+
+Receptionists - - (UC6 - Register arrival of User)
+Receptionists - - (UC7 - Acknowledge system that the user\n is ready for vaccination)
+
+Nurse - - (UC8 - Issue and Deliver vaccination certificate)
+Nurse - - (UC9 - Check list of Users present for vaccination)
+Nurse - - (UC10 - Check Users Info and health conditions)
+Nurse - - (UC11 - Register vaccination event)
+
+
+User - - (UC12 - Request Vaccination Certificate)
+User - - (UC13 - Schedule vaccination)
+User - - (UC14 - Authorize DGS to send SMS)
+
+
+CC - - (UC15 - Manage Covid-19 Process)
+CC - - (UC16 - Monitor vaccination process)
+
+
+@enduml
+
+PlantUML version 1.2022.1(Tue Feb 01 18:19:58 GMT 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>

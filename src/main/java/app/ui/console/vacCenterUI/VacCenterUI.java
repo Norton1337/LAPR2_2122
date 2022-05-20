@@ -2,6 +2,7 @@ package app.ui.console.vacCenterUI;
 
 import app.controller.vaccinationCenterController.VacCenterController;
 
+import app.domain.model.Company;
 import app.domain.model.VacCenter;
 import app.ui.console.utils.Utils;
 
@@ -12,13 +13,12 @@ public class VacCenterUI implements Runnable {
     private static final String SEPARATOR_LABEL = "-------------------------------------------------------------";
 
     VacCenterController vcController;
+    Company company;
 
-    public VacCenterUI() {
-        this.vcController = new VacCenterController();
-    }
 
-    public VacCenterUI(VacCenterController vcController) {
-        this.vcController = vcController;
+    public VacCenterUI(Company company) {
+        this.company=company;
+        this.vcController = new VacCenterController(company);
     }
 
     @Override

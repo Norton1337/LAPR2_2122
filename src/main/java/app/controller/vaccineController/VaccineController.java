@@ -7,8 +7,8 @@ import java.util.List;
 
 public class VaccineController {
     private final Company company;
-    public VaccineController(){
-        this.company = new Company();
+    public VaccineController(Company company){
+        this.company = company;
     }
 
     public VaccineType registerVaccineType(String disease) {
