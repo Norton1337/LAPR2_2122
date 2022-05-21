@@ -3,6 +3,7 @@ package app.ui.console;
 import app.controller.AuthController;
 import app.domain.model.Company;
 import app.domain.shared.Constants;
+import app.ui.console.centercoordinatorUI.CenterCoordinatorUI;
 import app.ui.console.SnsUserUI.RegisterSNSUserUI;
 import app.ui.console.utils.Utils;
 import app.ui.console.vaccineUI.VaccineUI;
@@ -58,6 +59,10 @@ public class AuthUI implements Runnable{
     private List<MenuItem> getMenuItemForRoles()
     {
         List<MenuItem> rolesUI = new ArrayList<>();
+        rolesUI.add(new MenuItem(Constants.ROLE_ADMIN, new AdminUI(company)));
+        rolesUI.add(new MenuItem(Constants.ROLE_RECEPTIONIST,new RegisterSNSUserUI(company)));
+        rolesUI.add(new MenuItem(Constants.ROLE_ADMIN,new VaccineUI(company)));
+        rolesUI.add(new MenuItem(Constants.ROLE_CCOORDINATOR,new CenterCoordinatorUI(company)));
         rolesUI.add(new MenuItem(Constants.ROLE_ADMIN, new AdminUI(company)));
         rolesUI.add(new MenuItem(Constants.ROLE_RECEPTIONIST,new RegisterSNSUserUI(company)));
 
