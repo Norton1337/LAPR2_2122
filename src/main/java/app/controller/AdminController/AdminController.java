@@ -10,16 +10,21 @@ import java.util.List;
 
 public class AdminController {
     public List importFromFile(String filename) throws FileNotFoundException {
+        boolean header= true ;
         List<List<String>> records = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
-                records.add(Arrays.asList(values));
+                if (header &&  !(values[0].indexOf(0)<= 9 && values[0].indexOf(0) >= 0))
+                    header = false;
+                else records.add(Arrays.asList(values));
+
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         printList(records);
         return records;
     }
