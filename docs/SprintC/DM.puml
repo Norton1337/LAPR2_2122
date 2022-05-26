@@ -62,8 +62,6 @@ class SNSUser {
 
 class UserVaccines{
 
-
-
 }
 
 class VaccineType{
@@ -85,6 +83,7 @@ class AgeGroup{
     -minAge
     -maxAge
 }
+
 class Dose{
     -doseNumber
     -dosage
@@ -115,6 +114,7 @@ WaitingRoom "1" -- "*" SNSUser: has >
 
 Vaccine "1" -- "1" VaccinationProcess: has >
 Vaccine "*" -- "1" VaccineType: has >
+UserVaccines "1" --"*" Vaccine: has >
 VaccinationProcess "1" -- "*" AgeGroup: has >
 AgeGroup "1" -- "*" Dose: has >
 (AgeGroup, Dose) .. TimeInterval
