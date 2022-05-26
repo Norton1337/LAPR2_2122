@@ -47,12 +47,7 @@ public class VaccineController {
         List<Vaccine> vaccineList;
         vaccineList = listVaccine();
         if (vaccineList.size() > 0) {
-            Collections.sort(vaccineList, new Comparator<Vaccine>() {
-                @Override
-                public int compare(final Vaccine o1, final Vaccine o2) {
-                    return o1.getName().compareTo(o2.getName());
-                }
-            });
+            Collections.sort(vaccineList);
         }
         return vaccineList;
     }

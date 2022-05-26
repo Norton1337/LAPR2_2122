@@ -1,6 +1,6 @@
 package app.domain.model;
 
-public class Vaccine {
+public class Vaccine implements Comparable<Vaccine>{
     private VaccineType vaccineType;
     private String name;
     private int lotNUmber;
@@ -46,4 +46,12 @@ public class Vaccine {
     }
 
 
+    @Override
+    public int compareTo(Vaccine o) {
+        if(o.vaccineType.getDisease()==this.vaccineType.getDisease()){
+            return this.name.compareTo(o.getName());
+        }else{
+            return this.vaccineType.getDisease().compareTo(o.vaccineType.getDisease());
+        }
+    }
 }
