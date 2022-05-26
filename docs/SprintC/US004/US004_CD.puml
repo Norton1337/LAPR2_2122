@@ -1,0 +1,69 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Company {
+    -String designation;
+    -AuthFacade authFacade;
+    +Organization(name, VatNumber, webSite, phone, email, postalAddress, manager)
+    +createVaccineType(disease)
+ }
+
+
+class ReceptionistController {
+    +ReceptionistController(Company company)
+    +getVacCenterList():VacCenterList
+    +checkInUser(UserLastVaccineDTO snsUser, VacCenter vacCenter):boolean
+    +checkOutUser(UserLastVaccineDTO snsUser, VacCenter vacCenter):boolean
+}
+
+class ReceptionistUI {
+    +Company company
+    +SnsUserController snsuserController
+    +ReceptionistController receptionistController
+}
+
+class UserLastVaccineDTO {
+    -int snsNumber
+    -String name
+    -int age
+    -LocalDateTime lastVaccineDate
+    -Vaccine lastVaccine
+    +UserLastVaccineDTO(Company company, int snsNumber)
+}
+
+class WaitingRoom {
+    -List<UserLastVaccineDTO> latestEntries
+    -List<UserLastVaccineDTO> snsUserList
+    -List<LocalDateTime> dateTimeOfArrival
+    +checkInSnsUser(UserLastVaccineDTO snsUser):boolean
+    -visitedToday(UserLastVaccineDTO snsUser):boolean
+    +checkOutSnsUser(UserLastVaccineDTO snsUser):boolean
+}
+
+class VacCenter {
+    -WaitingRoom waitingRoom
+
+
+}
+
+class VacCenterList {
+    -List<VacCenter> vacCenterList
+    +createVaccinationCenter(...):VacCenter
+    +showAllVacCenters():List<VacCenter>
+
+}
+
+ ReceptionistUI ..> ReceptionistController
+ ReceptionistController ..> Company
+
+ Company "1" --> "1" VacCenterList : owns
+ VacCenterList "1" --> "*" VacCenter: owns
+ Company "1" --> "1" SnsUserList : owns
+ SnsUserList "1" --> "*" SnsUser : owns
+ VacCenter "1" --> "1" WaitingRoom: has
+ WaitingRoom "1" --> "*" UserLastVaccineDTO: has
+
+
+
+
+@enduml
