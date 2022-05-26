@@ -28,4 +28,14 @@ public class VaccinationProcess {
         this.ageGroupList = ageGroupList;
     }
 
+    public AgeGroup getBelongingAgeGroup(int age){
+
+        for (AgeGroup ageGroup: ageGroupList) {
+            if(age<ageGroup.getMaxAge() && age>ageGroup.getMinAge()){
+                return ageGroup;
+            }
+        }
+        return null;
+    }
+
 }

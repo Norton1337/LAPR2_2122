@@ -4,16 +4,17 @@ public class SnsUser {
     private int snsNumber;
     private String name;
     private int age;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
-
-    public SnsUser(int snsNumber, String name, int age, int phoneNumber, String email) {
+    private UserVaccines userVaccines;
+    public SnsUser(int snsNumber, String name, int age, String phoneNumber, String email) {
 
         this.snsNumber = snsNumber;
         this.name = name;
         this.age = age;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.userVaccines = new UserVaccines();
     }
 
     public int getSnsNumber() {
@@ -40,11 +41,11 @@ public class SnsUser {
         this.age = age;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -54,6 +55,10 @@ public class SnsUser {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public UserVaccines getUserVaccines(){
+        return this.userVaccines;
     }
 
     @Override

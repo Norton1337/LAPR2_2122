@@ -13,7 +13,7 @@ public class SnsUserTests {
         int snsNumber=1;
         String name = "Nuno";
         int age = 1;
-        int phoneNumber = 123;
+        String phoneNumber = "123";
         String email = "nuno@isep";
         SnsUser usertest = new SnsUser(snsNumber,name,age,phoneNumber,email);
         Assertions.assertEquals(snsNumber,usertest.getSnsNumber());
@@ -23,7 +23,7 @@ public class SnsUserTests {
         int snsNumber=1;
         String name = "Nuno";
         int age = 1;
-        int phoneNumber = 123;
+        String phoneNumber = "123";
         String email = "nuno@isep";
         SnsUser usertest = new SnsUser(snsNumber,name,age,phoneNumber,email);
         Assertions.assertEquals(name,usertest.getName());
@@ -33,7 +33,7 @@ public class SnsUserTests {
         int snsNumber=1;
         String name = "Nuno";
         int age = 1;
-        int phoneNumber = 123;
+        String phoneNumber = "123";
         String email = "nuno@isep";
         SnsUser usertest = new SnsUser(snsNumber,name,age,phoneNumber,email);
         Assertions.assertEquals(age,usertest.getAge());
@@ -43,7 +43,7 @@ public class SnsUserTests {
         int snsNumber=1;
         String name = "Nuno";
         int age = 1;
-        int phoneNumber = 123;
+        String phoneNumber = "123";
         String email = "nuno@isep";
         SnsUser usertest = new SnsUser(snsNumber,name,age,phoneNumber,email);
         Assertions.assertEquals(phoneNumber,usertest.getPhoneNumber());
@@ -53,7 +53,7 @@ public class SnsUserTests {
         int snsNumber=1;
         String name = "Nuno";
         int age = 1;
-        int phoneNumber = 123;
+        String phoneNumber = "123";
         String email = "nuno@isep";
         SnsUser usertest = new SnsUser(snsNumber,name,age,phoneNumber,email);
         Assertions.assertEquals(email,usertest.getEmail());
@@ -63,14 +63,14 @@ public class SnsUserTests {
         int snsNumber1 = 1;
         String name1 = "Nuno";
         int age1 = 1;
-        int phoneNumber1 = 123;
+        String phoneNumber1 = "123";
         String email1 = "nuno@isep";
         SnsUser usertest1 = new SnsUser(snsNumber1, name1, age1, phoneNumber1, email1);
 
         int snsNumber2 = 2;
         String name2 = "Paulo";
         int age2 = 2;
-        int phoneNumber2 = 321;
+        String phoneNumber2 = "321";
         String email2 = "paulo@isep";
         SnsUser usertest2 = new SnsUser(snsNumber2, name2, age2, phoneNumber2, email2);
 

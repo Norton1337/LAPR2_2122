@@ -1,5 +1,9 @@
 package app.controller.AdminController;
 
+import app.domain.model.Company;
+import app.domain.model.SnsUser;
+import app.domain.model.Vaccine;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -9,6 +13,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AdminController {
+
+    private final Company company;
+
+    public AdminController(Company company){
+        this.company=company;
+    }
+
     public List importFromFile(String filename) throws FileNotFoundException {
         boolean header= true ;
         List<List<String>> records = new ArrayList<>();
@@ -24,17 +35,23 @@ public class AdminController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        printList(records);
+        for (List<String> user: records) {
+            this.company.getSnsUserList().createsnsUser(Integer.parseInt(user.get(0)),
+                                        user.get(1),
+                                        Integer.parseInt(user.get(2)),
+                                        user.get(3),
+                                        user.get(4));
+        }
+        printList();
         return records;
     }
 
     public void importFromFileWithHeader(String filename) {
     }
 
-    public void printList(List users) {
-        for(int i= 0; i<users.size();i++){
-            System.out.println(users.get(i));
+    public void printList() {
+        for (SnsUser user:this.company.getSnsUserList().listSnsUser()) {
+            System.out.println(user.toString());
         }
     }
 }

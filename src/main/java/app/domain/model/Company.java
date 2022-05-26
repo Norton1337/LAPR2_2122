@@ -14,11 +14,11 @@ public class Company {
 
     private String designation;
     private AuthFacade authFacade;
-    private List<VaccineType> vaccineTypeList;
-    private List<Vaccine> vaccineList;
-    private List<Employee> employeesList;
-    private List<VacCenter> vacCenterList;
-    private List<SnsUser> snsUserList;
+    private List<VaccineType> vaccineTypeList = new ArrayList<>();
+    private List<Vaccine> vaccineList = new ArrayList<>();
+    private List<Employee> employeesList = new ArrayList<>();
+    private List<VacCenter> vacCenterList = new ArrayList<>();
+    private SnsUserList snsUserList = new SnsUserList();
     //private List<Employee> employeesWithSpecificRoleList;
 
 
@@ -29,14 +29,19 @@ public class Company {
 
         this.designation = designation;
         this.authFacade = new AuthFacade();
+        this.vaccineTypeList = new ArrayList<>();
+        this.vaccineList = new ArrayList<>();
+        this.employeesList = new ArrayList<>();
+        this.vacCenterList = new ArrayList<>();
+        this.snsUserList = new SnsUserList();
     }
 
     public Company() {
-        vaccineTypeList = new ArrayList<>();
-        vaccineList = new ArrayList<>();
-        employeesList = new ArrayList<>();
-        vacCenterList = new ArrayList<>();
-        snsUserList = new ArrayList<>();
+        this.vaccineTypeList = new ArrayList<>();
+        this.vaccineList = new ArrayList<>();
+        this.employeesList = new ArrayList<>();
+        this.vacCenterList = new ArrayList<>();
+        this.snsUserList = new SnsUserList();
     }
 
     public String getDesignation() {
@@ -47,12 +52,10 @@ public class Company {
         return authFacade;
     }
 
-
-    public SnsUser createsnsUser(int snsNumber, String name, int age, int phoneNumber, String email) {
-        SnsUser snsUser = new SnsUser(snsNumber, name, age, phoneNumber, email);
-        this.snsUserList.add(snsUser);
-        return snsUser;
+    public SnsUserList getSnsUserList(){
+        return this.snsUserList;
     }
+
 
     public VaccineType createVaccineType(String disease) {
         VaccineType vaccineType = new VaccineType(disease);
@@ -71,9 +74,7 @@ public class Company {
         return this.vaccineList;
     }
 
-    public List<SnsUser> listSnsUser() {
-        return this.snsUserList;
-    }
+
 
     public VaccinationProcess createVaccinationProcess(int recoveryPeriod, List<AgeGroup> ageGroupList){
         return new VaccinationProcess(recoveryPeriod, ageGroupList);

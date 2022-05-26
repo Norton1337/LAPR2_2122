@@ -33,7 +33,7 @@ public class RegisterSNSUserUI implements Runnable{
                             System.out.println("Whats the SNS user age?");
                             int age = inInt.nextInt();
                             System.out.println("Whats the SNS user phone number?");
-                            int phoneNumber = inInt.nextInt();
+                            String phoneNumber = inString.nextLine();
                             System.out.println("Whats the SNS user email address?");
                             String email = inString.nextLine();
                             SnsUser user = snsuserController.registerUser(snsNumber, name, age, phoneNumber, email);

@@ -14,6 +14,7 @@ public class VacCenter {
     private int slotDuration;
     private int maxVaccines; // max no. of vaccines that can be given per slot
     private List <Employee> employeeList = new ArrayList<>();
+    private WaitingRoom waitingRoom;
 
     public VacCenter(String name, String address, String phoneNumber, String faxNumber, String website, int openingHour, int closingHour, int slotDuration, int maxVaccines) {
         this.name = name;
@@ -25,6 +26,7 @@ public class VacCenter {
         this.closingHour = closingHour;
         this.slotDuration = slotDuration;
         this.maxVaccines = maxVaccines;
+        this.waitingRoom= new WaitingRoom();
     }
 
 
@@ -79,5 +81,10 @@ public class VacCenter {
     public int getMaxVaccines() {
         return maxVaccines;
     }
+
+    public WaitingRoom getWaitingRoom() {
+        return waitingRoom;
+    }
+
 
 }

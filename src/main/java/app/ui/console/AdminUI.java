@@ -29,7 +29,7 @@ public class AdminUI implements Runnable{
         List<MenuItem> options = new ArrayList<MenuItem>();
         options.add(new MenuItem("Vaccine Type UI", new VaccineUI(company)));
         options.add(new MenuItem("Vaccination Center ", new VacCenterUI(company)));
-        options.add(new MenuItem("Load users from CSV file ", new loadSnsUserUI()));
+        options.add(new MenuItem("Load users from CSV file ", new loadSnsUserUI(company)));
         options.add(new MenuItem("Employees", new EmployeeUI()));
 
         int option = 0;
