@@ -10,7 +10,7 @@ public class SnsUserList {
 
     }
 
-    public SnsUser createsnsUser(int snsNumber, String name, int age, String phoneNumber, String email) {
+    public SnsUser createSnsUser(int snsNumber, String name, int age, String phoneNumber, String email) {
         SnsUser snsUser = new SnsUser(snsNumber, name, age, phoneNumber, email);
         this.snsUserList.add(snsUser);
         return snsUser;

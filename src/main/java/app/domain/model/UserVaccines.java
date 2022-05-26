@@ -1,14 +1,14 @@
 package app.domain.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-import java.util.Calendar;
-import java.util.Date;
+
 import java.util.List;
 
 public class UserVaccines {
-    private List<LocalDate> vaccineDateList;
+    private List<LocalDateTime> vaccineDateList;
     private List<Vaccine> vaccineList;
 
     public UserVaccines(){
@@ -17,7 +17,7 @@ public class UserVaccines {
     }
 
     public void addVaccine(Vaccine vaccine){
-        LocalDate newDate = LocalDate.now();
+        LocalDateTime newDate = LocalDateTime.now();
         System.out.println(newDate);
         vaccineList.add(vaccine);
         vaccineDateList.add(newDate);
@@ -30,7 +30,7 @@ public class UserVaccines {
             return null;
     }
 
-    public LocalDate lastVaccineDate(){
+    public LocalDateTime lastVaccineDate(){
         if(!this.vaccineDateList.isEmpty())
             return this.vaccineDateList.get(this.vaccineDateList.size()-1);
         else

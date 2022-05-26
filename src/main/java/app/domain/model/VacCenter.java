@@ -82,8 +82,12 @@ public class VacCenter {
         return maxVaccines;
     }
 
-    public WaitingRoom getWaitingRoom() {
-        return waitingRoom;
+    public boolean checkInSnsUser(UserLastVaccineDTO snsUser) {
+        return this.waitingRoom.checkInSnsUser(snsUser);
+    }
+
+    public boolean checkOutSnsUser(UserLastVaccineDTO snsUser) {
+        return this.waitingRoom.checkOutSnsUser(snsUser);
     }
 
 

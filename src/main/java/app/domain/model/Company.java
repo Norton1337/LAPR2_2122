@@ -3,6 +3,7 @@ package app.domain.model;
 import pt.isep.lei.esoft.auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,11 +15,11 @@ public class Company {
 
     private String designation;
     private AuthFacade authFacade;
-    private List<VaccineType> vaccineTypeList = new ArrayList<>();
-    private List<Vaccine> vaccineList = new ArrayList<>();
-    private List<Employee> employeesList = new ArrayList<>();
-    private List<VacCenter> vacCenterList = new ArrayList<>();
-    private SnsUserList snsUserList = new SnsUserList();
+    private final List<VaccineType> vaccineTypeList;
+    private final List<Vaccine> vaccineList;
+    private final List<Employee> employeesList;
+    private final VacCenterList vacCenterList;
+    private final SnsUserList snsUserList;
     //private List<Employee> employeesWithSpecificRoleList;
 
 
@@ -32,7 +33,7 @@ public class Company {
         this.vaccineTypeList = new ArrayList<>();
         this.vaccineList = new ArrayList<>();
         this.employeesList = new ArrayList<>();
-        this.vacCenterList = new ArrayList<>();
+        this.vacCenterList = new VacCenterList();
         this.snsUserList = new SnsUserList();
     }
 
@@ -40,7 +41,7 @@ public class Company {
         this.vaccineTypeList = new ArrayList<>();
         this.vaccineList = new ArrayList<>();
         this.employeesList = new ArrayList<>();
-        this.vacCenterList = new ArrayList<>();
+        this.vacCenterList = new VacCenterList();
         this.snsUserList = new SnsUserList();
     }
 
@@ -52,10 +53,27 @@ public class Company {
         return authFacade;
     }
 
-    public SnsUserList getSnsUserList(){
-        return this.snsUserList;
+    public SnsUser getUserBySNSNumber(int snsNumber){
+        return this.snsUserList.getUserBySNSNumber(snsNumber);
     }
 
+    public SnsUser createSnsUser(int snsNumber, String name, int age, String phoneNumber, String email) {
+        return this.snsUserList.createSnsUser(snsNumber,name,age,phoneNumber,email);
+    }
+    public List<SnsUser> listSnsUser() {
+        return this.snsUserList.listSnsUser();
+    }
+
+    public VacCenterList getVacCenterList() {
+        return vacCenterList;
+    }
+
+    public UserLastVaccineDTO createDTO(int snsNumber){
+        SnsUser aSnsUser = getUserBySNSNumber(snsNumber);
+        LocalDateTime lastVaccineDate = aSnsUser.getUserVaccines().lastVaccineDate();
+        Vaccine lastVaccine = aSnsUser.getUserVaccines().lastVaccine();
+        return new UserLastVaccineDTO(aSnsUser.getSnsNumber(),aSnsUser.getName(),aSnsUser.getAge(),lastVaccineDate,lastVaccine);
+    }
 
     public VaccineType createVaccineType(String disease) {
         VaccineType vaccineType = new VaccineType(disease);
@@ -121,13 +139,5 @@ public class Company {
         return false;
     }
 
-    public VacCenter createVaccinationCenter(String name, String address, String phoneNumber, String faxNumber, String website, int openingHour, int closingHour, int slotDuration, int maxVaccines) {
-        VacCenter vacCenter = new VacCenter(name, address, phoneNumber, faxNumber, website, openingHour, closingHour, slotDuration, maxVaccines);
-        vacCenterList.add(vacCenter);
-        return vacCenter;
-    }
 
-    public List<VacCenter> showAllVacCenters() {
-        return this.vacCenterList;
-    }
 }

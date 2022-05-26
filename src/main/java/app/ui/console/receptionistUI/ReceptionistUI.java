@@ -1,20 +1,20 @@
 package app.ui.console.receptionistUI;
 
+import app.controller.receptionistController.ReceptionistController;
 import app.controller.snsUserController.SnsUserController;
-import app.domain.model.Company;
-import app.domain.model.SnsUser;
-import app.domain.model.VacCenter;
-import app.domain.model.WaitingRoom;
+import app.domain.model.*;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class ReceptionistUI implements Runnable{
-    Company company;
-    SnsUserController snsuserController;
+    private final Company company;
+    private final SnsUserController snsuserController;
+    private final ReceptionistController receptionistController;
     public ReceptionistUI(Company company) {
         this.company=company;
         this.snsuserController = new SnsUserController(this.company);
+        this.receptionistController = new ReceptionistController((this.company));
     }
 
     @Override
@@ -30,13 +30,12 @@ public class ReceptionistUI implements Runnable{
         int option = inInt.nextInt();
         switch(option) {
             case 1:
-
-                if(this.company.showAllVacCenters().isEmpty())
+                List<VacCenter> vacCenterList = receptionistController.getVacCenterList();
+                if(vacCenterList.isEmpty())
                     System.out.println("No vaccination Centers exist!");
                 else{
                     System.out.println("Select a vaccination Center:");
                     int i=0;
-                    List<VacCenter> vacCenterList = this.company.showAllVacCenters();
                     for (VacCenter vacCenter: vacCenterList) {
                         System.out.println("["+i+"] "+vacCenter.getName());
                     }
@@ -79,18 +78,18 @@ public class ReceptionistUI implements Runnable{
         System.out.println("2-Check-Out SNSUser");
         System.out.println("0-Cancel");
         int option = inInt.nextInt();
-        WaitingRoom waitingRoom= vacCenter.getWaitingRoom();
         System.out.println("Type the user's Vaccination Number");
         int snsNumber = inInt.nextInt();
-        SnsUser snsUser = this.company.getSnsUserList().getUserBySNSNumber(snsNumber);
-        if(snsUser==null){
+        UserLastVaccineDTO snsUser = receptionistController.checkIfUserExists(snsNumber);
+
+        if(snsUser.getSnsNumber()==-1){
             System.out.println("This user does not exist!");
             option=0;
         }
         switch(option) {
             case 1:
-
-                if(waitingRoom.checkInSnsUser(snsUser)){
+                boolean didCheckIn = receptionistController.checkInUser(snsUser,vacCenter);
+                if(didCheckIn){
                     System.out.println("This user has been checked-out.");
                 }else{
                     System.out.println("This user cannot be checked-out right now.");
@@ -98,8 +97,8 @@ public class ReceptionistUI implements Runnable{
                 chosenVacCenter(vacCenter);
                 break;
             case 2:
-
-                if(waitingRoom.checkOutSnsUser(snsUser)){
+                boolean didCheckOut = receptionistController.checkOutUser(snsUser,vacCenter);
+                if(didCheckOut){
                     System.out.println("This user has been checked-out.");
                 }else{
                     System.out.println("This user cannot be checked-out right now.");

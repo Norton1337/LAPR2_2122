@@ -15,10 +15,10 @@ public class VacCenterController {
     }
 
     public VacCenter registerVC(String name, String address, String phoneNumber, String faxNumber, String website, int openingHour, int closingHour, int slotDuration, int maxVaccines) {
-        return company.createVaccinationCenter(name, address, phoneNumber, faxNumber, website, openingHour, closingHour, slotDuration, maxVaccines);
+        return company.getVacCenterList().createVaccinationCenter(name, address, phoneNumber, faxNumber, website, openingHour, closingHour, slotDuration, maxVaccines);
     }
 
     public List<VacCenter> listVacCenters(){
-        return company.showAllVacCenters();
+        return company.getVacCenterList().showAllVacCenters();
     }
 }

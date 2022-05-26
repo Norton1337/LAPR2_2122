@@ -2,7 +2,6 @@ package app.controller.AdminController;
 
 import app.domain.model.Company;
 import app.domain.model.SnsUser;
-import app.domain.model.Vaccine;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -36,7 +35,7 @@ public class AdminController {
             e.printStackTrace();
         }
         for (List<String> user: records) {
-            this.company.getSnsUserList().createsnsUser(Integer.parseInt(user.get(0)),
+            this.company.createSnsUser(Integer.parseInt(user.get(0)),
                                         user.get(1),
                                         Integer.parseInt(user.get(2)),
                                         user.get(3),
@@ -50,7 +49,7 @@ public class AdminController {
     }
 
     public void printList() {
-        for (SnsUser user:this.company.getSnsUserList().listSnsUser()) {
+        for (SnsUser user:this.company.listSnsUser()) {
             System.out.println(user.toString());
         }
     }

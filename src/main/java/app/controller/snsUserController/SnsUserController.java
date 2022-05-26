@@ -13,7 +13,7 @@ public class SnsUserController {
 
     public SnsUser registerUser(int snsNumber, String name, int age, String phoneNumber, String email) {
 
-        SnsUser snsUser= company.getSnsUserList().createsnsUser(snsNumber,name,age,phoneNumber,email);
+        SnsUser snsUser= company.createSnsUser(snsNumber,name,age,phoneNumber,email);
         addUserToList(snsUser);
         return snsUser;
     }
