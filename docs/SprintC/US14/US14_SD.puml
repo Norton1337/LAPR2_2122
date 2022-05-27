@@ -1,0 +1,36 @@
+@startuml
+autonumber
+
+actor "Administrator" as ADM
+
+participant ":AdministratorUI" as UI
+participant ":AdminController" as CTRL
+participant ":File \n <<Interface>>" as FILE
+participant ":Company" as ORG
+participant ":SnsUser" as USER
+
+
+activate ADM
+ADM -> UI :Asks to input SNS users from a CSV file
+activate UI
+UI -> CTRL: importFromFile()
+activate CTRL
+ loop
+activate FILE
+CTRL -> FILE: reads info from file
+FILE -> CTRL: splits info into list
+deactivate FILE
+CTRL -> ORG: gives info about Sns Users
+activate ORG
+ORG --> USER:creates snsuser(snsNumber;name;age;phoneNumber;email)
+deactivate ORG
+end loop
+CTRL --> UI: inform operation (in)success
+deactivate CTRL
+UI --> ADM: inform operation (in)success
+deactivate UI
+
+deactivate ADM
+
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+autonumber
+actor "Administrator" as ADM
+
+activate ADM
+ADM -> ":System" : Request to load SNS users to the system from a csv file
+activate ":System"
+":System" --> ADM : requests the file name
+
+
+ADM -> ":System" : types the file name
+
+":System" --> ADM : asks if it has an header
+
+ADM -> ":System": Types option
+
+":System" --> ADM : informs operation (in)success
+deactivate ":System"
+
+deactivate ADM
+
+@enduml

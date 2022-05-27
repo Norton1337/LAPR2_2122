@@ -1,0 +1,49 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Company {
+    -String designation;
+    -AuthFacade authFacade;
+    +Organization(name, VatNumber, webSite, phone, email, postalAddress, manager)
+    +createSnsUser(snsNumber;name;age;phoneNumber;email)
+ }
+
+
+class AdminController {
+    +AdminController(Company company)
+    +importFromFile(String filename)
+}
+
+class AdmininistratorUI {
+    +Company company
+    +AdminController snsuserController
+}
+
+interface File {
+    +BufferedReader
+    +splitintoList
+}
+
+class SnsUser{
+    -snsNumber
+    -name
+    -age
+    -phoneNumber
+    -email
+}
+
+
+AdminController ..> File
+ AdmininistratorUI ..> AdminController
+ AdminController ..> Company
+
+
+
+
+ Company "1" --> "*" SnsUser : owns
+
+
+
+
+
+@enduml
