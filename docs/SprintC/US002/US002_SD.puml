@@ -1,0 +1,60 @@
+@startuml US002_SD
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Recepcionist" as RCP
+
+participant "RecepcionistUI" as UI
+participant "RecepcionistController" as CTRL
+participant "Company" as Comp
+participant "Receptionist" as RECP
+participant "Schedule" as SCH
+participant "VaccineType" as VT
+participant "ScheduleVaccineStore" as SVS
+
+
+activate RCP
+RCP -> UI : Starts scheduling a Vaccination
+activate UI
+UI -> CTRL : create
+
+activate CTRL
+
+CTRL -> Comp : company = App.getInstance()
+
+
+UI --> RCP : Requests Date, hour and Sns User information
+
+deactivate UI
+
+RCP -> UI : Enters required Data
+
+activate UI
+
+
+deactivate CTRL
+
+UI -> CTRL : getAllVaccineTypes()
+CTRL -> Comp : getAllVaccineTypes()
+Comp -> RECP : getAllVaccineTypes()
+RECP -> VT : getAllVaccineTypes()
+
+UI -> CTRL : newVaccineSchedule(String date, int hour, int snsUserNumber, VaccineType vaccineType)
+CTRL -> Comp : newVaccineSchedule(String date, int hour, int snsUserNumber, VaccineType vaccineType)
+Comp -> RECP : receptionist = new Recepcionist(String date, int hour, int snsUserNumber, VaccineType vaccineType)
+RECP -> SCH : schedule = new Schedule(String date, int hour, int snsUserNumber, VaccineType vaccineType)
+
+activate CTRL
+
+UI --> RCP : Shows the Data and requests confirmation
+
+RCP -> UI : Confirms Data
+UI -> CTRL : saveSchedule()
+CTRL -> Comp : saveSchedule()
+Comp -> RECP : saveSchedule()
+RECP -> SVS : scheduleVaccineStore = new ScheduleVaccineStore(Schedule schedule)
+UI --> RCP : Shows operation sucess
+
+
+@enduml

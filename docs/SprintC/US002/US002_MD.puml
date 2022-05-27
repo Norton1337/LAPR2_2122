@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Receptionist "1" -- "1" VaccinationCenter: updates >
+Receptionist "1" -- "*" Schedule: creates >
+Schedule "*" -- "1" VaccineType: has >
+
+
+class VaccinationCenter {
+    -name
+    -address
+    -phoneNumber
+    -emailAddress
+    -faxNumber
+    -websiteAddress
+    -openingHours
+    -closingHours
+    -slotDuration
+    -maxNumVaxPerSlot
+    -capacity
+}
+class Schedule{
+    -dateTime
+}
+class VaccineType{
+    -disease
+}
+
+@enduml

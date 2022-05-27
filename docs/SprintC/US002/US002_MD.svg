@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="525px" preserveAspectRatio="none" style="width:300px;height:525px;background:#FFFFFF;" version="1.1" viewBox="0 0 300 525" width="300px" zoomAndPan="magnify"><defs/><g><!--MD5=[03960189e81aa2c066c762ffabbee709]
+class Receptionist--><g id="elem_Receptionist"><rect fill="#F1F1F1" height="48" id="Receptionist" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="110" x="76" y="7"/><ellipse cx="91" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M93,19.5 Q93.2031,19 93.4375,18.75 Q93.6719,18.5 93.9375,18.5 Q94.4063,18.5 94.7031,18.7813 Q95,19.0625 95,19.7188 L95,21.2813 Q95,21.9375 94.7188,22.2188 Q94.4375,22.5 94,22.5 Q93.6094,22.5 93.3594,22.3281 Q93.1094,22.1563 93,21.7031 Q92.9531,21.3906 92.7813,21.2188 Q92.4688,20.8906 91.9063,20.7031 Q91.3438,20.5 90.7813,20.5 Q90.0781,20.5 89.4844,20.7813 Q88.9063,21.0625 88.4531,21.6875 Q88,22.3125 88,23.1719 L88,24.0938 Q88,25.125 88.8438,25.8125 Q89.6875,26.5 91.1875,26.5 Q92.0781,26.5 92.7031,26.2969 Q93.0625,26.1875 93.4688,25.8281 Q93.7344,25.625 93.875,25.5625 Q94.0156,25.5 94.1875,25.5 Q94.5156,25.5 94.75,25.7656 Q95,26.0156 95,26.375 Q95,26.7188 94.6563,27.125 Q94.1563,27.7188 93.3594,28.0469 Q92.3125,28.5 91.0313,28.5 Q89.5313,28.5 88.3281,27.9063 Q87.3594,27.4375 86.6719,26.4219 Q86,25.4063 86,24.2031 L86,23.1094 Q86,21.8594 86.5938,20.7656 Q87.2031,19.6719 88.25,19.0938 Q89.3125,18.5 90.5,18.5 Q91.2188,18.5 91.8438,18.75 Q92.4688,19 93,19.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="105" y="28.7285">Receptionist</text><line style="stroke:#181818;stroke-width:0.5;" x1="77" x2="185" y1="39" y2="39"/><line style="stroke:#181818;stroke-width:0.5;" x1="77" x2="185" y1="47" y2="47"/></g><!--MD5=[de60e6d4f424ae4d0522096f76a59010]
+class VaccinationCenter--><g id="elem_VaccinationCenter"><rect codeLine="8" fill="#F1F1F1" height="241.7031" id="VaccinationCenter" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="148" x="7" y="133"/><ellipse cx="22" cy="149" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M24,145.5 Q24.2031,145 24.4375,144.75 Q24.6719,144.5 24.9375,144.5 Q25.4063,144.5 25.7031,144.7813 Q26,145.0625 26,145.7188 L26,147.2813 Q26,147.9375 25.7188,148.2188 Q25.4375,148.5 25,148.5 Q24.6094,148.5 24.3594,148.3281 Q24.1094,148.1563 24,147.7031 Q23.9531,147.3906 23.7813,147.2188 Q23.4688,146.8906 22.9063,146.7031 Q22.3438,146.5 21.7813,146.5 Q21.0781,146.5 20.4844,146.7813 Q19.9063,147.0625 19.4531,147.6875 Q19,148.3125 19,149.1719 L19,150.0938 Q19,151.125 19.8438,151.8125 Q20.6875,152.5 22.1875,152.5 Q23.0781,152.5 23.7031,152.2969 Q24.0625,152.1875 24.4688,151.8281 Q24.7344,151.625 24.875,151.5625 Q25.0156,151.5 25.1875,151.5 Q25.5156,151.5 25.75,151.7656 Q26,152.0156 26,152.375 Q26,152.7188 25.6563,153.125 Q25.1563,153.7188 24.3594,154.0469 Q23.3125,154.5 22.0313,154.5 Q20.5313,154.5 19.3281,153.9063 Q18.3594,153.4375 17.6719,152.4219 Q17,151.4063 17,150.2031 L17,149.1094 Q17,147.8594 17.5938,146.7656 Q18.2031,145.6719 19.25,145.0938 Q20.3125,144.5 21.5,144.5 Q22.2188,144.5 22.8438,144.75 Q23.4688,145 24,145.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="36" y="154.7285">VaccinationCenter</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="154" y1="165" y2="165"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="173"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="27" y="183.5332">name</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="190.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="27" y="201.1426">address</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="208.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="27" y="218.752">phoneNumber</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="225.8281"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="27" y="236.3613">emailAddress</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="243.4375"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="27" y="253.9707">faxNumber</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="261.0469"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="27" y="271.5801">websiteAddress</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="278.6563"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="27" y="289.1895">openingHours</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="296.2656"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="27" y="306.7988">closingHours</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="313.875"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="27" y="324.4082">slotDuration</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="331.4844"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="27" y="342.0176">maxNumVaxPerSlot</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="349.0938"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="27" y="359.627">capacity</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="154" y1="366.7031" y2="366.7031"/></g><!--MD5=[c680266cf9e454ca06c2d1bb8b683e6b]
+class Schedule--><g id="elem_Schedule"><rect codeLine="21" fill="#F1F1F1" height="65.6094" id="Schedule" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="91" x="190.5" y="221"/><ellipse cx="205.5" cy="237" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M207.5,233.5 Q207.7031,233 207.9375,232.75 Q208.1719,232.5 208.4375,232.5 Q208.9063,232.5 209.2031,232.7813 Q209.5,233.0625 209.5,233.7188 L209.5,235.2813 Q209.5,235.9375 209.2188,236.2188 Q208.9375,236.5 208.5,236.5 Q208.1094,236.5 207.8594,236.3281 Q207.6094,236.1563 207.5,235.7031 Q207.4531,235.3906 207.2813,235.2188 Q206.9688,234.8906 206.4063,234.7031 Q205.8438,234.5 205.2813,234.5 Q204.5781,234.5 203.9844,234.7813 Q203.4063,235.0625 202.9531,235.6875 Q202.5,236.3125 202.5,237.1719 L202.5,238.0938 Q202.5,239.125 203.3438,239.8125 Q204.1875,240.5 205.6875,240.5 Q206.5781,240.5 207.2031,240.2969 Q207.5625,240.1875 207.9688,239.8281 Q208.2344,239.625 208.375,239.5625 Q208.5156,239.5 208.6875,239.5 Q209.0156,239.5 209.25,239.7656 Q209.5,240.0156 209.5,240.375 Q209.5,240.7188 209.1563,241.125 Q208.6563,241.7188 207.8594,242.0469 Q206.8125,242.5 205.5313,242.5 Q204.0313,242.5 202.8281,241.9063 Q201.8594,241.4375 201.1719,240.4219 Q200.5,239.4063 200.5,238.2031 L200.5,237.1094 Q200.5,235.8594 201.0938,234.7656 Q201.7031,233.6719 202.75,233.0938 Q203.8125,232.5 205,232.5 Q205.7188,232.5 206.3438,232.75 Q206.9688,233 207.5,233.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="219.5" y="242.7285">Schedule</text><line style="stroke:#181818;stroke-width:0.5;" x1="191.5" x2="280.5" y1="253" y2="253"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="198.5" y="261"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="210.5" y="271.5332">dateTime</text><line style="stroke:#181818;stroke-width:0.5;" x1="191.5" x2="280.5" y1="278.6094" y2="278.6094"/></g><!--MD5=[0e501da62322464167c8ec4d233a6b7e]
+class VaccineType--><g id="elem_VaccineType"><rect codeLine="24" fill="#F1F1F1" height="65.6094" id="VaccineType" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="114" x="179" y="453"/><ellipse cx="194" cy="469" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M196,465.5 Q196.2031,465 196.4375,464.75 Q196.6719,464.5 196.9375,464.5 Q197.4063,464.5 197.7031,464.7813 Q198,465.0625 198,465.7188 L198,467.2813 Q198,467.9375 197.7188,468.2188 Q197.4375,468.5 197,468.5 Q196.6094,468.5 196.3594,468.3281 Q196.1094,468.1563 196,467.7031 Q195.9531,467.3906 195.7813,467.2188 Q195.4688,466.8906 194.9063,466.7031 Q194.3438,466.5 193.7813,466.5 Q193.0781,466.5 192.4844,466.7813 Q191.9063,467.0625 191.4531,467.6875 Q191,468.3125 191,469.1719 L191,470.0938 Q191,471.125 191.8438,471.8125 Q192.6875,472.5 194.1875,472.5 Q195.0781,472.5 195.7031,472.2969 Q196.0625,472.1875 196.4688,471.8281 Q196.7344,471.625 196.875,471.5625 Q197.0156,471.5 197.1875,471.5 Q197.5156,471.5 197.75,471.7656 Q198,472.0156 198,472.375 Q198,472.7188 197.6563,473.125 Q197.1563,473.7188 196.3594,474.0469 Q195.3125,474.5 194.0313,474.5 Q192.5313,474.5 191.3281,473.9063 Q190.3594,473.4375 189.6719,472.4219 Q189,471.4063 189,470.2031 L189,469.1094 Q189,467.8594 189.5938,466.7656 Q190.2031,465.6719 191.25,465.0938 Q192.3125,464.5 193.5,464.5 Q194.2188,464.5 194.8438,464.75 Q195.4688,465 196,465.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="208" y="474.7285">VaccineType</text><line style="stroke:#181818;stroke-width:0.5;" x1="180" x2="292" y1="485" y2="485"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="187" y="493"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="199" y="503.5332">disease</text><line style="stroke:#181818;stroke-width:0.5;" x1="180" x2="292" y1="510.6094" y2="510.6094"/></g><!--MD5=[2bde3c2658e9820e0f62920496486001]
+link Receptionist to VaccinationCenter--><g id="link_Receptionist_VaccinationCenter"><path codeLine="3" d="M117.71,55.09 C113.02,64.16 108.14,74.81 105,85 C100.31,100.2 96.54,116.47 93.49,132.67 " fill="none" id="Receptionist-VaccinationCenter" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#000000" points="108.51,98.9486,114.0109,91.1903,108.4001,89.4387,108.51,98.9486" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="46" x="119" y="99.4951">updates</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="106.6174" y="76.4499">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="87.0378" y="122.3038">1</text></g><!--MD5=[5bd8abec604a5efddd0fd669773de516]
+link Receptionist to Schedule--><g id="link_Receptionist_Schedule"><path codeLine="4" d="M150.05,55.13 C156.89,64.11 164.31,74.7 170,85 C194.84,129.99 214.94,186.29 226.18,220.94 " fill="none" id="Receptionist-Schedule" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#000000" points="187.0863,98.7197,185.983,89.2734,180.6413,91.726,187.0863,98.7197" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="194" y="99.4951">creates</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="146.8403" y="76.4997">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="218.639" y="210.043">*</text></g><!--MD5=[fd59449717ce1c5334d382e3e36ca150]
+link Schedule to VaccineType--><g id="link_Schedule_VaccineType"><path codeLine="5" d="M236,287.47 C236,331.3 236,408.95 236,452.7 " fill="none" id="Schedule-VaccineType" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#000000" points="241,419.1758,243.9389,410.1307,238.0611,410.1307,241,419.1758" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="250" y="419.4951">has</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="230.5703" y="308.1566">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="228.3109" y="442.1372">1</text></g><!--MD5=[6307d54e2e4166a5050c3d7b2844d378]
+@startuml
+'https://plantuml.com/class-diagram
+
+Receptionist "1" - - "1" VaccinationCenter: updates >
+Receptionist "1" - - "*" Schedule: creates >
+Schedule "*" - - "1" VaccineType: has >
+
+
+class VaccinationCenter {
+    -name
+    -address
+    -phoneNumber
+    -emailAddress
+    -faxNumber
+    -websiteAddress
+    -openingHours
+    -closingHours
+    -slotDuration
+    -maxNumVaxPerSlot
+    -capacity
+}
+class Schedule{
+    -dateTime
+}
+class VaccineType{
+    -disease
+}
+
+@enduml
+
+@startuml
+
+Receptionist "1" - - "1" VaccinationCenter: updates >
+Receptionist "1" - - "*" Schedule: creates >
+Schedule "*" - - "1" VaccineType: has >
+
+
+class VaccinationCenter {
+    -name
+    -address
+    -phoneNumber
+    -emailAddress
+    -faxNumber
+    -websiteAddress
+    -openingHours
+    -closingHours
+    -slotDuration
+    -maxNumVaxPerSlot
+    -capacity
+}
+class Schedule{
+    -dateTime
+}
+class VaccineType{
+    -disease
+}
+
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 11:55:52 BST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>

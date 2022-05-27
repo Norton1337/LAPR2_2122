@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+RecepcionistUI ..> RecepcionistController
+RecepcionistController ..> Company
+Company --> Receptionist
+
+Receptionist "1" -- "*" Schedule: creates >
+Schedule "*" -- "1" VaccineType: has >
+Schedule "1" -- "1" ScheduleVaccineStore: is saved >
+
+class RecepcionistController {
+-Company company
+----
++getAllVaccineTypes() : List<VaccineType>
+}
+class Schedule{
+    -dateTime
+}
+class VaccineType{
+-String disease
+----
++getAllVaccineTypes() : List<VaccineType>
+}
+class ScheduleVaccineStore{
+    -List<Schedule> schedulesArrayList
+}
+class Company{
+-Receptionist receptionist
+----
++getAllVaccineTypes() : List<VaccineType>
+}
+
+@enduml
