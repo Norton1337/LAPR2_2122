@@ -13,4 +13,6 @@ public class Constants {
     public static final String ROLE_RECEPTIONIST = "RECEPTIONIST";
     public static final String ROLE_NURSE = "NURSE";
     public static final String ROLE_CCOORDINATOR = "CENTER COORDINATOR";
+
+    public static final String USER_SNS = "USER SNS";
 }

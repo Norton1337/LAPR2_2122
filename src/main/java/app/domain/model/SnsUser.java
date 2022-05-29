@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import java.util.Objects;
+
 public class SnsUser {
     private int snsNumber;
     private String name;
