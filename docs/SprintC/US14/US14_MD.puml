@@ -1,0 +1,29 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+
+
+class Administrator{
+
+}
+
+class Company{
+
+}
+
+class SNSUser {
+    -snsNumber
+    -name
+    -age
+    -phoneNum
+    -email
+}
+
+
+Company "1" --"*" Administrator: has >
+Company "1" --"*" SNSUser : has >
+Administrator "1" --"*" SNSUser : imports >
+
+@enduml

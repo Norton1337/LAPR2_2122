@@ -54,13 +54,20 @@ public class VaccineController {
 
     public List<Vaccine> getVaccineListOrderedByType(List<Vaccine> vaccineList) {
         for(int i=0; i<vaccineList.size();i++){
+            String typeA = vaccineList.get(i).getVaccineType().getDisease();
+            String vaccineA = vaccineList.get(i).getName();
             for (int j=i+1; j<vaccineList.size();j++){
-                String typeA = vaccineList.get(i).getVaccineType().getDisease();
                 String typeB= vaccineList.get(j).getVaccineType().getDisease();
+                String vaccineB = vaccineList.get(j).getName();
                 if(typeA.compareTo(typeB)>0){
-                    String temp = typeA;
-                    typeA = typeB;
-                    typeB = temp;
+                  Vaccine vaccinetemp = vaccineList.get(i);
+                    vaccineList.set(i, vaccineList.get(j));
+                    vaccineList.set(j,vaccinetemp);
+                    if (typeA.compareTo(typeB)==0 && vaccineA.compareTo(vaccineB)>0) {
+                        Vaccine vaccinetemp2 = vaccineList.get(i);
+                        vaccineList.set(i, vaccineList.get(j));
+                        vaccineList.set(j,vaccinetemp2);
+                    }
                 }
             }
         }

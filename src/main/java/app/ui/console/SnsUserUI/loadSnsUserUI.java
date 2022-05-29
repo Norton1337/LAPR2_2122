@@ -18,11 +18,16 @@ public class loadSnsUserUI implements Runnable{
     @Override
     public void run() {
         Scanner inString = new Scanner(System.in);
+        Scanner inInt = new Scanner(System.in);
         System.out.println("What is the filename");
         String filename = inString.nextLine();
+        System.out.println("Your file has an header?");
+        System.out.println("1-Yes");
+        System.out.println("2-No");
+        int option = inInt.nextInt();
         AdminController adminController = new AdminController(company);
         try {
-            adminController.importFromFile(filename);
+            adminController.importFromFile(filename,option);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
