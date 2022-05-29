@@ -3,6 +3,7 @@ package app.ui.console;
 import app.controller.AuthController;
 import app.domain.model.Company;
 import app.domain.shared.Constants;
+import app.ui.console.SnsUserUI.ScheduleVaccineUI;
 import app.ui.console.centercoordinatorUI.CenterCoordinatorUI;
 import app.ui.console.SnsUserUI.RegisterSNSUserUI;
 import app.ui.console.receptionistUI.ReceptionistUI;
@@ -66,6 +67,7 @@ public class AuthUI implements Runnable{
         rolesUI.add(new MenuItem(Constants.ROLE_ADMIN, new AdminUI(company)));
         rolesUI.add(new MenuItem(Constants.ROLE_RECEPTIONIST,new ReceptionistUI(company)));
         rolesUI.add(new MenuItem(Constants.ROLE_NURSE, new NurseUI(company)));
+        rolesUI.add(new MenuItem(Constants.USER_SNS, new ScheduleVaccineUI(company)));
 
         //
         return rolesUI;
