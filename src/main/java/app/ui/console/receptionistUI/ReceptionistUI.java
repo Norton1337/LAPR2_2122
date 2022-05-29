@@ -46,7 +46,6 @@ public class ReceptionistUI implements Runnable{
                         chosenVacCenter(vacCenterList.get(choice));
                     }
                 }
-
                 run();
                 break;
             case 2:
@@ -76,19 +75,20 @@ public class ReceptionistUI implements Runnable{
         System.out.println("\n\n "+vacCenterName+" UI\n\n");
         System.out.println("1-Check-In SNSUser");
         System.out.println("2-Check-Out SNSUser");
-        System.out.println("3-Check waiting list");
         System.out.println("0-Cancel");
-        int option = inInt.nextInt();
-        System.out.println("Type the user's Vaccination Number");
-        int snsNumber = inInt.nextInt();
-        UserLastVaccineDTO snsUser = receptionistController.checkIfUserExists(snsNumber);
+        int answer = inInt.nextInt();
 
-        if(snsUser==null){
-            System.out.println("This user does not exist!");
-            option=0;
-        }
-        switch(option) {
+        switch(answer) {
             case 1:
+                System.out.println("Type the user's Vaccination Number");
+                int snsNumber = inInt.nextInt();
+                UserLastVaccineDTO snsUser = receptionistController.checkIfUserExists(snsNumber);
+
+                if (snsUser == null) {
+                    System.out.println("This user does not exist!");
+                    answer = 0;
+                    break;
+                }
                 boolean didCheckIn = receptionistController.checkInUser(snsUser,vacCenter);
                 if(didCheckIn){
                     System.out.println("This user has been checked-in.");
@@ -98,7 +98,15 @@ public class ReceptionistUI implements Runnable{
                 chosenVacCenter(vacCenter);
                 break;
             case 2:
-                boolean didCheckOut = receptionistController.checkOutUser(snsUser,vacCenter);
+                System.out.println("Type the user's Vaccination Number");
+                int snsNumber2 = inInt.nextInt();
+                UserLastVaccineDTO snsUser2 = receptionistController.checkIfUserExists(snsNumber2);
+
+                if (snsUser2 == null) {
+                    System.out.println("This user does not exist!");
+                    break;
+                }
+                boolean didCheckOut = receptionistController.checkOutUser(snsUser2,vacCenter);
                 if(didCheckOut){
                     System.out.println("This user has been checked-out.");
                 }else{
@@ -106,14 +114,9 @@ public class ReceptionistUI implements Runnable{
                 }
                 chosenVacCenter(vacCenter);
                 break;
-            case 3:
-                List<UserLastVaccineDTO> usersList = receptionistController.getWaitingLists(vacCenter);
-                for (UserLastVaccineDTO user : usersList){
-                    System.out.println(user);
-                }
-                break;
             case 0: break;
         }
 
     }
+
 }
