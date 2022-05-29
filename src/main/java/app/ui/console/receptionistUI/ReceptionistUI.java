@@ -82,7 +82,7 @@ public class ReceptionistUI implements Runnable{
         int snsNumber = inInt.nextInt();
         UserLastVaccineDTO snsUser = receptionistController.checkIfUserExists(snsNumber);
 
-        if(snsUser.getSnsNumber()==-1){
+        if(snsUser==null){
             System.out.println("This user does not exist!");
             option=0;
         }
@@ -90,9 +90,9 @@ public class ReceptionistUI implements Runnable{
             case 1:
                 boolean didCheckIn = receptionistController.checkInUser(snsUser,vacCenter);
                 if(didCheckIn){
-                    System.out.println("This user has been checked-out.");
+                    System.out.println("This user has been checked-in.");
                 }else{
-                    System.out.println("This user cannot be checked-out right now.");
+                    System.out.println("This user cannot be checked-in right now.");
                 }
                 chosenVacCenter(vacCenter);
                 break;
