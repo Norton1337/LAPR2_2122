@@ -23,7 +23,6 @@ public class VaccineController {
         return company.listVaccineTypes();
     }
 
-
     public Vaccine createVaccine(String name, int lotnumber, VaccineType vaccineType, VaccinationProcess vaccinationProcess) {
         return company.createVaccine(name, lotnumber, vaccineType, vaccinationProcess);
 

@@ -15,7 +15,6 @@ public class Main {
     {
         try
         {
-
             MainMenuUI menu = new MainMenuUI();
 
             menu.run();

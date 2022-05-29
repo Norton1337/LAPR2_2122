@@ -77,10 +77,12 @@ public class App {
         this.authFacade.addUserRole(Constants.ROLE_RECEPTIONIST,Constants.ROLE_RECEPTIONIST);
         this.authFacade.addUserRole(Constants.ROLE_CCOORDINATOR,Constants.ROLE_CCOORDINATOR);
         this.authFacade.addUserRole(Constants.ROLE_NURSE, Constants.ROLE_NURSE);
+        this.authFacade.addUserRole(Constants.USER_SNS, Constants.USER_SNS);
         this.authFacade.addUserWithRole("Main Administrator", "admin@lei.sem2.pt", "123456",Constants.ROLE_ADMIN);
         this.authFacade.addUserWithRole("Receptionist","receptionist@lei.sem2.pt","12345",Constants.ROLE_RECEPTIONIST);
         this.authFacade.addUserWithRole("Nurse", "nurse@lei.sem2.pt", "12345", Constants.ROLE_NURSE);
         this.authFacade.addUserWithRole("Center Coordinator","coordinator@lei.sem2.pt","12345",Constants.ROLE_CCOORDINATOR);
+        this.authFacade.addUserWithRole("User SNS","user@lei.sem2.pt","12345",Constants.USER_SNS);
 
 
     }

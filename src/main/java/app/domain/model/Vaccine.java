@@ -1,5 +1,10 @@
 package app.domain.model;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.List;
+
 public class Vaccine implements Comparable<Vaccine>{
     private VaccineType vaccineType;
     private String name;
