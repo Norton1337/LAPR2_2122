@@ -76,6 +76,7 @@ public class ReceptionistUI implements Runnable{
         System.out.println("\n\n "+vacCenterName+" UI\n\n");
         System.out.println("1-Check-In SNSUser");
         System.out.println("2-Check-Out SNSUser");
+        System.out.println("3-Check waiting list");
         System.out.println("0-Cancel");
         int option = inInt.nextInt();
         System.out.println("Type the user's Vaccination Number");
@@ -104,6 +105,12 @@ public class ReceptionistUI implements Runnable{
                     System.out.println("This user cannot be checked-out right now.");
                 }
                 chosenVacCenter(vacCenter);
+                break;
+            case 3:
+                List<UserLastVaccineDTO> usersList = receptionistController.getWaitingLists(vacCenter);
+                for (UserLastVaccineDTO user : usersList){
+                    System.out.println(user);
+                }
                 break;
             case 0: break;
         }
