@@ -17,30 +17,32 @@ public class WaitingRoom {
     }
 
     public boolean checkInSnsUser(UserLastVaccineDTO snsUser){
+        snsUsersWaiting();
 
-        if(snsUserList.contains(snsUser))
-            return false;
-        else{
-            Vaccine lastUserVaccine = snsUser.getLastVaccine();
-            LocalDateTime date = snsUser.getLastVaccineDate();
-            if(lastUserVaccine!=null){
-                int userAge = snsUser.getAge();
-                AgeGroup ageGroup = lastUserVaccine.getVaccinationProcess().getBelongingAgeGroup(userAge);
-                LocalDateTime nextPossibleDate = date.plusDays(ageGroup.getTimeInterval().getNumDays());
-                if(nextPossibleDate.isBefore(LocalDateTime.now()) && !visitedToday(snsUser)) {
-                    latestEntries.add(snsUser);
-                    dateTimeOfArrival.add(LocalDateTime.now());
-                    return snsUserList.add(snsUser);
-                }else return false;
+        for (UserLastVaccineDTO user:snsUserList) {
+            if(user.getSnsNumber()==snsUser.getSnsNumber())
+                return false;
+        }
 
-            }else {
-                if(visitedToday(snsUser))
-                    return false;
-                else {
-                    latestEntries.add(snsUser);
-                    dateTimeOfArrival.add(LocalDateTime.now());
-                    return snsUserList.add(snsUser);
-                }
+        Vaccine lastUserVaccine = snsUser.getLastVaccine();
+        LocalDateTime date = snsUser.getLastVaccineDate();
+        if(lastUserVaccine!=null){
+            int userAge = snsUser.getAge();
+            AgeGroup ageGroup = lastUserVaccine.getVaccinationProcess().getBelongingAgeGroup(userAge);
+            LocalDateTime nextPossibleDate = date.plusDays(ageGroup.getTimeInterval().getNumDays());
+            if(nextPossibleDate.isBefore(LocalDateTime.now()) && !visitedToday(snsUser)) {
+                latestEntries.add(snsUser);
+                dateTimeOfArrival.add(LocalDateTime.now());
+                return snsUserList.add(snsUser);
+            }else return false;
+
+        }else {
+            if(visitedToday(snsUser))
+                return false;
+            else {
+                latestEntries.add(snsUser);
+                dateTimeOfArrival.add(LocalDateTime.now());
+                return snsUserList.add(snsUser);
             }
         }
     }
@@ -50,12 +52,24 @@ public class WaitingRoom {
     }
 
     public boolean checkOutSnsUser(UserLastVaccineDTO snsUser){
-        if(!snsUserList.contains(snsUser))
+        boolean isCheckedIn=false;
+        UserLastVaccineDTO userToRemove=null;
+        for (UserLastVaccineDTO user:snsUserList) {
+            if(user.getSnsNumber()==snsUser.getSnsNumber()) {
+                isCheckedIn = true;
+                userToRemove=user;
+            }
+        }
+        if(!isCheckedIn)
             return false;
         else{
-            dateTimeOfArrival.remove(snsUserList.indexOf(snsUser));
-            return snsUserList.remove(snsUser);
+            dateTimeOfArrival.remove(snsUserList.indexOf(userToRemove));
+            return snsUserList.remove(userToRemove);
         }
+    }
+
+    public List<UserLastVaccineDTO> snsUsersWaiting(){
+        return this.snsUserList;
     }
 
 }

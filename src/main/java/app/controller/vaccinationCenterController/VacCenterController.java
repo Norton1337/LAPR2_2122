@@ -21,4 +21,17 @@ public class VacCenterController {
     public List<VacCenter> listVacCenters(){
         return company.getVacCenterList().showAllVacCenters();
     }
+
+    public void printerVCC(VacCenter vcc) {
+        System.out.println(
+                "Name: " + vcc.getName() + "\n" +
+                        "Address: " + vcc.getAddress() + "\n" +
+                        "Phone Number: " + vcc.getPhoneNumber() + "\n" +
+                        "Fax: " + vcc.getFaxNumber() + "\n" +
+                        "Website: " + vcc.getWebsite() + "\n" +
+                        "Opening Hour: " + vcc.getOpeningHour() + "h" + "\n" +
+                        "Closing Hour: " + vcc.getClosingHour() + "h" + "\n" +
+                        "Slot Duration: " + vcc.getSlotDuration() + "\n" +
+                        "Max. of Vaccines: " + vcc.getMaxVaccines() + "\n");
+    }
 }

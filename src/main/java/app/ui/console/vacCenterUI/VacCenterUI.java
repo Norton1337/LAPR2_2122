@@ -46,7 +46,7 @@ public class VacCenterUI implements Runnable {
                 int maxVaccines = Utils.readIntegerFromConsole("Max. Vaccines: ");
                 VacCenter vcc = vcController.registerVC(name, address, phoneNumber, faxNumber, website, openingHour, closingHour, slotDuration, maxVaccines);
                 System.out.println("\nVaccination Center registered successfully\n");
-                printerVCC(vcc);
+                vcController.printerVCC(vcc);
                 option = 0;
                 break;
             case 2:
@@ -62,7 +62,7 @@ public class VacCenterUI implements Runnable {
                 System.out.println(SEPARATOR_LABEL);
 
                 for (VacCenter vacCenter : list) {
-                    printerVCC(vacCenter);
+                    vcController.printerVCC(vacCenter);
                 }
                 option = 0;
                 break;
@@ -71,18 +71,5 @@ public class VacCenterUI implements Runnable {
                 break;
         }
 
-    }
-
-    private void printerVCC(VacCenter vcc) {
-        System.out.println(
-                "Name: " + vcc.getName() + "\n" +
-                        "Address: " + vcc.getAddress() + "\n" +
-                        "Phone Number: " + vcc.getPhoneNumber() + "\n" +
-                        "Fax: " + vcc.getFaxNumber() + "\n" +
-                        "Website: " + vcc.getWebsite() + "\n" +
-                        "Opening Hour: " + vcc.getOpeningHour() + "h" + "\n" +
-                        "Closing Hour: " + vcc.getClosingHour() + "h" + "\n" +
-                        "Slot Duration: " + vcc.getSlotDuration() + "\n" +
-                        "Max. of Vaccines: " + vcc.getMaxVaccines() + "\n");
     }
 }

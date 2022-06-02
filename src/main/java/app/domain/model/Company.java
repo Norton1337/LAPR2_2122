@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import jdk.jfr.Enabled;
 import pt.isep.lei.esoft.auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
@@ -70,6 +71,9 @@ public class Company {
 
     public UserLastVaccineDTO createDTO(int snsNumber){
         SnsUser aSnsUser = getUserBySNSNumber(snsNumber);
+        if(aSnsUser==null){
+            return null;
+        }
         LocalDateTime lastVaccineDate = aSnsUser.getUserVaccines().lastVaccineDate();
         Vaccine lastVaccine = aSnsUser.getUserVaccines().lastVaccine();
         return new UserLastVaccineDTO(aSnsUser.getSnsNumber(),aSnsUser.getName(),aSnsUser.getAge(),lastVaccineDate,lastVaccine);

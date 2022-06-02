@@ -32,6 +32,8 @@ public class AdminUI implements Runnable{
         options.add(new MenuItem("Load users from CSV file ", new loadSnsUserUI(company)));
         options.add(new MenuItem("Employees", new EmployeeUI()));
 
+
+
         int option = 0;
         do
         {

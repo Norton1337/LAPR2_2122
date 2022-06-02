@@ -90,5 +90,9 @@ public class VacCenter {
         return this.waitingRoom.checkOutSnsUser(snsUser);
     }
 
+    public List<UserLastVaccineDTO> waitingRoom(){
+        return waitingRoom.snsUsersWaiting();
+    }
+
 
 }
