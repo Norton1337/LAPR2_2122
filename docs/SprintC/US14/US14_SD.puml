@@ -22,9 +22,8 @@ FILE -> CTRL: splits info into list
 deactivate FILE
 CTRL -> ORG: gives info about Sns Users
 activate ORG
-ORG --> USER:creates snsuser(snsNumber;name;age;phoneNumber;email)
-activate USER
-deactivate USER
+ORG --> USER**:creates snsuser(snsNumber;name;age;phoneNumber;email)
+
 deactivate ORG
 end loop
 CTRL --> UI: inform operation (in)success

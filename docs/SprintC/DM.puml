@@ -138,6 +138,7 @@ Administrator "1" -- "*" VaccinationCenter: manages >
 Administrator "1" -- "*" SNSUser: registers >
 Administrator "1" -- "*" Vaccine: manages >
 Administrator "1" -- "*" VaccineType: manages >
+Administrator "1"--"*" SNSUser: imports>
 
 
 @enduml
