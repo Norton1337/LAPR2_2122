@@ -21,8 +21,6 @@ UI -> CTRL : create
 
 activate CTRL
 
-CTRL -> Comp : company = App.getInstance()
-
 
 UI --> RCP : Requests Date, hour and Sns User information
 
@@ -38,7 +36,6 @@ deactivate CTRL
 UI -> CTRL : getAllVaccineTypes()
 CTRL -> Comp : getAllVaccineTypes()
 Comp -> RECP : getAllVaccineTypes()
-RECP -> VT : getAllVaccineTypes()
 
 UI -> CTRL : newVaccineSchedule(String date, int hour, int snsUserNumber, VaccineType vaccineType)
 CTRL -> Comp : newVaccineSchedule(String date, int hour, int snsUserNumber, VaccineType vaccineType)

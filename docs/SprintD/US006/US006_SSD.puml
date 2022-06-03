@@ -1,0 +1,17 @@
+@startuml US006_SSD
+'https://plantuml.com/sequence-diagram
+autonumber
+
+actor "DGS" as DGS
+activate DGS
+DGS -> System : Starts scheduling Vaccination
+activate System
+System --> DGS : Requests Date, hour and Sns User information
+DGS --> System: Enters required Data
+System --> DGS : Shows the Data and requests confirmation
+DGS -> System : Confirms Data
+System --> DGS : Shows operation sucess
+deactivate System
+deactivate DGS
+
+@enduml
