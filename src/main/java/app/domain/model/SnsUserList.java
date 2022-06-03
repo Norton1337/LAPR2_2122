@@ -24,6 +24,7 @@ public class SnsUserList {
     public SnsUser getUserBySNSNumber(int snsNumber){
 
         if (snsUserList.isEmpty()) {
+            System.out.println("Sorry, we don't have your records. Please enter your data:\n");
             Scanner inInt = new Scanner(System.in);
             Scanner inString = new Scanner(System.in);
 
