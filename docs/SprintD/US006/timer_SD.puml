@@ -1,0 +1,24 @@
+@startuml timer_SD
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+participant "app:App" as app
+participant "timer:Timer" as ti
+participant "task:CountAdministrationsController" as ta
+
+
+note over app
+App reads date from config file and has a
+constant of type long called NEXT_TIME
+that is equivalent to 24h
+end note
+
+activate app
+app -> ta** : «create(date: Date)»
+app-> ti**: «create()»
+app->ti:scheduleAtFixedRate(ta,date,NEXT_TIME) : void
+activate ti
+deactivate
+
+@enduml
