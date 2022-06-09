@@ -30,6 +30,8 @@ public class NurseUI implements Runnable {
             if ( (option >= 0) && (option < options.size()))
             {
                 options.get(option).run();
+                option=-1;
+                break;
             }
         }
         while (option != -1 );

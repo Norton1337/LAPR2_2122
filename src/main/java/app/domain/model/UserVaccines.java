@@ -8,31 +8,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserVaccines {
-    private List<LocalDateTime> vaccineDateList;
-    private List<Vaccine> vaccineList;
+    private List<UserVaccinesDTO> vaccineList;
 
     public UserVaccines(){
-        vaccineDateList=new ArrayList<>();
         vaccineList=new ArrayList<>();
     }
 
-    public void addVaccine(Vaccine vaccine){
-        LocalDateTime newDate = LocalDateTime.now();
-        System.out.println(newDate);
+    public void addVaccine(UserVaccinesDTO vaccine){
         vaccineList.add(vaccine);
-        vaccineDateList.add(newDate);
+    }
+
+    public List<UserVaccinesDTO> getUserVaccinesDto(){
+        return this.vaccineList;
     }
 
     public Vaccine lastVaccine(){
         if(!this.vaccineList.isEmpty())
-            return this.vaccineList.get(this.vaccineList.size()-1);
+            return this.vaccineList.get(this.vaccineList.size()-1).vaccine;
         else
             return null;
     }
 
     public LocalDateTime lastVaccineDate(){
-        if(!this.vaccineDateList.isEmpty())
-            return this.vaccineDateList.get(this.vaccineDateList.size()-1);
+        if(!this.vaccineList.isEmpty())
+            return this.vaccineList.get(this.vaccineList.size()-1).lastDoseDate();
         else
             return null;
     }

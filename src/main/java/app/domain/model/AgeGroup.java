@@ -5,7 +5,7 @@ import java.util.List;
 public class AgeGroup {
     private int minAge;
     private int maxAge;
-    private List<Dose> doseList;
+    private Dose dose;
     private TimeInterval timeInterval;
 
     public AgeGroup(int minAge, int maxAge, TimeInterval timeInterval){
@@ -30,12 +30,12 @@ public class AgeGroup {
         this.maxAge = maxAge;
     }
 
-    public List<Dose> getDoseList() {
-        return this.doseList;
+    public Dose getDose() {
+        return this.dose;
     }
 
-    public void setDoseList(List<Dose> doseList) {
-        this.doseList = doseList;
+    public void setDose(Dose dose) {
+        this.dose = dose;
     }
 
     public TimeInterval getTimeInterval() {

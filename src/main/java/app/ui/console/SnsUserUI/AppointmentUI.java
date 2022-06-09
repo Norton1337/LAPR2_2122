@@ -106,7 +106,7 @@ public class AppointmentUI implements Runnable{
                             if(snsUser.getSnsNumber() == snsNumber) {
                                 Vaccine userVaccine = snsUser.getUserVaccines().lastVaccine();
                                 if (userVaccine == null) {
-                                    snsUser.getUserVaccines().addVaccine(vaccine);
+                                    snsUser.getUserVaccines().addVaccine(new UserVaccinesDTO(vaccine,snsUser.getAge()));
                                     currentUser = snsUser;
                                     System.out.println("Vaccine scheduled successfully");
                                     System.out.println("User SNS Number: " + currentUser.getSnsNumber() + "\n" +

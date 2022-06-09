@@ -15,6 +15,10 @@ public class VacCenterList {
         vacCenterList.add(vacCenter);
         return vacCenter;
     }
+    public VacCenter createVaccinationCenter(VacCenter vacCenter) {
+        vacCenterList.add(vacCenter);
+        return vacCenter;
+    }
 
     public List<VacCenter> showAllVacCenters() {
         return this.vacCenterList;

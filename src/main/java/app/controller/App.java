@@ -1,6 +1,7 @@
 package app.controller;
 
 import app.domain.model.Company;
+import app.domain.model.VacCenter;
 import app.domain.shared.Constants;
 import pt.isep.lei.esoft.auth.AuthFacade;
 import pt.isep.lei.esoft.auth.UserSession;
@@ -84,8 +85,8 @@ public class App {
         this.authFacade.addUserWithRole("Center Coordinator","coordinator@lei.sem2.pt","12345",Constants.ROLE_CCOORDINATOR);
         this.authFacade.addUserWithRole("User SNS","user@lei.sem2.pt","12345",Constants.USER_SNS);
 
-
     }
+
 
     // Extracted from https://www.javaworld.com/article/2073352/core-java/core-java-simply-singleton.html?page=2
     private static App singleton = null;

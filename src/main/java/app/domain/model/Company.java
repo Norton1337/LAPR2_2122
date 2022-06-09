@@ -69,6 +69,10 @@ public class Company {
         return vacCenterList;
     }
 
+    public VacCenter createVacCenter(VacCenter vacCenter) {
+        return vacCenterList.createVaccinationCenter(vacCenter);
+    }
+
     public UserLastVaccineDTO createDTO(int snsNumber){
         SnsUser aSnsUser = getUserBySNSNumber(snsNumber);
         if(aSnsUser==null){
