@@ -22,6 +22,10 @@ public class VacCenterController {
         return company.getVacCenterList().showAllVacCenters();
     }
 
+    public List<VacCenter> listVacCentersString(){
+        return company.getVacCenterList().showAllVacCenters();
+    }
+
     public void printerVCC(VacCenter vcc) {
         System.out.println(
                 "Name: " + vcc.getName() + "\n" +
