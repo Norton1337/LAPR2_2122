@@ -2,6 +2,7 @@ package app.ui;
 
 import app.domain.model.Company;
 import app.ui.console.MainMenuUI;
+import app.ui.gui.App;
 
 /**
  *
