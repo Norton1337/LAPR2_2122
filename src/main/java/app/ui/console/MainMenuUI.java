@@ -5,6 +5,7 @@ import app.ui.console.SnsUserUI.RegisterSNSUserUI;
 import app.ui.console.utils.Utils;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,6 +83,11 @@ public class MainMenuUI {
 
 
         company.listSnsUser().get(0).getUserVaccines().addVaccine(new UserVaccinesDTO(company.listVaccine().get(0),20));
+        company.listSnsUser().get(1).getUserVaccines().addVaccine(new UserVaccinesDTO(company.listVaccine().get(0),20));
+        company.listSnsUser().get(2).getUserVaccines().addVaccine(new UserVaccinesDTO(company.listVaccine().get(0),20));
+        company.listSnsUser().get(3).getUserVaccines().addVaccine(new UserVaccinesDTO(company.listVaccine().get(0),20,LocalDateTime.now().minusDays(1)));
+        company.listSnsUser().get(4).getUserVaccines().addVaccine(new UserVaccinesDTO(company.listVaccine().get(0),20,LocalDateTime.now().minusDays(1)));
+        company.listSnsUser().get(5).getUserVaccines().addVaccine(new UserVaccinesDTO(company.listVaccine().get(0),20,LocalDateTime.now().plusDays(1)));
 
 
     }

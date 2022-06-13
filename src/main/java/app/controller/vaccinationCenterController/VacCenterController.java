@@ -8,6 +8,8 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class VacCenterController {
@@ -62,22 +64,26 @@ public class VacCenterController {
 
     private void treatData(List<FullVaccinationDTO> fullyVaccinated) throws FileNotFoundException {
         List<LocalDate> differentDates = new ArrayList<>();
+
         for (FullVaccinationDTO vac:fullyVaccinated) {
             if(!differentDates.contains(vac.dateOfFullVaccination)) {
                 differentDates.add(vac.dateOfFullVaccination);
             }
         }
+        differentDates.sort(Comparator.comparing(LocalDate::atStartOfDay));
         List<Integer> amountPerDate = new ArrayList<>();
         for (int i=0;i<differentDates.size();i++) {
             amountPerDate.add(0);
             for (FullVaccinationDTO vac:fullyVaccinated) {
-                if(differentDates.contains(vac.dateOfFullVaccination)) {
+                if(differentDates.get(i).equals(vac.dateOfFullVaccination)) {
                     amountPerDate.set(i,amountPerDate.get(i)+1);
+
                 }
+
             }
         }
+
         String dir = System.getProperty("user.dir");
-        System.out.println(dir);
         PrintWriter pw = new PrintWriter(new File(dir+"/src/main/resources/files/newFile.csv"));
         StringBuilder sb = new StringBuilder();
         sb.append("date");

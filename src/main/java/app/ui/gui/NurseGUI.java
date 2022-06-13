@@ -52,7 +52,9 @@ public class NurseGUI implements Initializable {
         Stage stage2 = new Stage();
         stage2.setScene(scene);
         stage2.setResizable(true);
-        stage2.showAndWait();
+        stage = (Stage) anchorPane.getScene().getWindow();
+        stage.close();
+        stage2.show();
     }
 
     public void btnRegisterAdverseReaction(ActionEvent actionEvent) throws IOException {
@@ -61,13 +63,21 @@ public class NurseGUI implements Initializable {
         Stage stage2 = new Stage();
         stage2.setScene(scene);
         stage2.setResizable(true);
-        stage2.showAndWait();
+        stage = (Stage) anchorPane.getScene().getWindow();
+        stage.close();
+        stage2.show();
     }
 
-    public void logout(ActionEvent actionEvent) {
+    public void logout(ActionEvent actionEvent) throws IOException {
         authController.doLogout();
         stage = (Stage) anchorPane.getScene().getWindow();
         stage.close();
+        Parent login = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/Login.fxml")));
+        Scene scene = new Scene(login);
+        Stage stage2 = new Stage();
+        stage2.setScene(scene);
+        stage2.setResizable(true);
+        stage2.show();
     }
 
 

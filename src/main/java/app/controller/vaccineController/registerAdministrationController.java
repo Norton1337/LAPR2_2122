@@ -2,16 +2,21 @@ package app.controller.vaccineController;
 
 import app.controller.AuthController;
 import app.domain.model.*;
+import app.ui.console.MainMenuUI;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -28,7 +33,7 @@ public class registerAdministrationController implements Initializable {
     public ComboBox vaccineOption;
     @FXML
     public ComboBox doseOption;
-    final Company company= new Company();
+    Company company= new Company();
     @FXML
     public Label labelInform;
 
@@ -51,49 +56,13 @@ public class registerAdministrationController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        VacCenter vacCenter = new VacCenter(
-                "Vacinação Porto",
-                "Rua do Porto",
-                "912626999",
-                "019283746",
-                "website@test.com",
-                9,
-                19,
-                12,
-                200);
-
-        VacCenter vacCenter2 = new VacCenter(
-                "Vacinação Maia",
-                "Rua da Maia",
-                "915728236",
-                "015632856",
-                "websiteMaia@test.com",
-                9,
-                19,
-                12,
-                200);
-        AgeGroup ageGroup1 = new AgeGroup(10,18,new TimeInterval(50));
-        ageGroup1.setDose(new Dose(1,250));
-        AgeGroup ageGroup2 = new AgeGroup(19,25,new TimeInterval(60));
-        ageGroup2.setDose(new Dose(1,250));
-        AgeGroup ageGroup3 = new AgeGroup(26,50,new TimeInterval(30));
-        ageGroup3.setDose(new Dose(1,250));
-        List<AgeGroup> ageGroups = new ArrayList<>();
-        VaccinationProcess vaccinationProcess;
-        VaccineType vaccineType;
-        Vaccine vaccine;
-        ageGroups.add(ageGroup1);
-        ageGroups.add(ageGroup2);
-        ageGroups.add(ageGroup3);
-        vaccinationProcess = new VaccinationProcess(30, ageGroups);
-        vaccineType = new VaccineType("covid");
-        vaccine = new Vaccine("name",123456,vaccineType,vaccinationProcess);
-        this.company.createSnsUser(1,"Nuno",12, "122","email");
-        vacCenter.checkInSnsUser(new UserLastVaccineDTO(1,"Nuno",12, LocalDateTime.now(),null));
-        this.company.createVacCenter(vacCenter);
-        this.company.createVacCenter(vacCenter2);
+        MainMenuUI menuUI = new MainMenuUI();
+        this.company=menuUI.newBootstrap();
+        this.company.getVacCenterList().showAllVacCenters().get(0).checkInSnsUser(
+                new UserLastVaccineDTO(1,"Nuno",12, LocalDateTime.now(),null)
+        );
         this.vacCenterList=this.company.getVacCenterList().showAllVacCenters();
-        vaccineList.add(vaccine);
+        vaccineList.add(this.company.listVaccine().get(0));
 
         for (int i=0;i<vacCenterList.size();i++){
             Vaccenters.add(String.valueOf(vacCenterList.get(i).getName()));
@@ -149,12 +118,18 @@ public class registerAdministrationController implements Initializable {
         }
     }
 
-    public void doseOption(ActionEvent actionEvent) {
-         this.doses = (String) doseOption.getValue();
-         labelInform.setText("User will be informed in 30 min.");
+    public void doseOption(ActionEvent actionEvent) throws IOException {
+        this.doses = (String) doseOption.getValue();
+        labelInform.setText("User will be informed in 30 min.");
         authController.doLogout();
+        Parent adverseMenu = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/NurseScene.fxml")));
+        Scene scene = new Scene(adverseMenu);
+        Stage stage2 = new Stage();
+        stage2.setScene(scene);
+        stage2.setResizable(true);
         stage = (Stage) anchorPane.getScene().getWindow();
         stage.close();
+        stage2.show();
     }
     public void labelInform(MouseEvent mouseEvent) {
 

@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,10 +28,15 @@ public class centerCoordinatorMenu implements Initializable {
 
     Company company;
     @FXML
-    private AnchorPane anchorPane;
+    private BorderPane borderPane;
 
     @FXML
     private Button logout;
+    @FXML
+    private Button submitbtn;
+
+    @FXML
+    private Button returnbtn;
 
     @FXML
     private Stage stage;
@@ -39,10 +45,16 @@ public class centerCoordinatorMenu implements Initializable {
 
     private AuthController authController = new AuthController();
 
-    public void logout(ActionEvent actionEvent) {
+    public void logout(ActionEvent actionEvent) throws IOException {
         authController.doLogout();
-        stage = (Stage) anchorPane.getScene().getWindow();
+        stage = (Stage) logout.getScene().getWindow();
         stage.close();
+        Parent login = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/Login.fxml")));
+        Scene scene = new Scene(login);
+        Stage stage2 = new Stage();
+        stage2.setScene(scene);
+        stage2.setResizable(true);
+        stage2.show();
 
     }
 
@@ -53,7 +65,10 @@ public class centerCoordinatorMenu implements Initializable {
         Stage stage2 = new Stage();
         stage2.setScene(scene);
         stage2.setResizable(true);
-        stage2.showAndWait();
+        stage = (Stage) submitbtn.getScene().getWindow();
+        stage.close();
+        stage2.show();
+
     }
 
     @Override
