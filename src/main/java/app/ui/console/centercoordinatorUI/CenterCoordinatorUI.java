@@ -4,6 +4,7 @@ import app.controller.vaccinationCenterController.VacCenterController;
 import app.controller.vaccineController.VaccineController;
 import app.domain.model.*;
 
+import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -59,7 +60,11 @@ public class CenterCoordinatorUI implements Runnable{
                     option=0;
                     break;
                 }else{
-                    chosenVacCenter(list.get(option2));
+                    try {
+                        chosenVacCenter(list.get(option2));
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             case 0: break;
             default:
@@ -68,7 +73,7 @@ public class CenterCoordinatorUI implements Runnable{
         }
     }
 
-    private void chosenVacCenter(VacCenter vacCenter){
+    private void chosenVacCenter(VacCenter vacCenter) throws FileNotFoundException {
         String vacCenterName = vacCenter.getName();
         Scanner inInt = new Scanner(System.in);
         System.out.println("\n\n "+vacCenterName+" UI\n\n");
@@ -85,7 +90,7 @@ public class CenterCoordinatorUI implements Runnable{
 
     }
 
-    private void exportVacStat(VacCenter vacCenter) {
+    private void exportVacStat(VacCenter vacCenter) throws FileNotFoundException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
         System.out.println("Choose time interval. Format(dd/MM/yyyy)\n First date:");
         Scanner inString = new Scanner(System.in);
@@ -96,23 +101,7 @@ public class CenterCoordinatorUI implements Runnable{
         String date2 = inString.nextLine();
         LocalDate localDate2 = LocalDate.parse(date2, formatter);
 
-        List<SnsUser> snsUsers = this.company.listSnsUser();
-        List<FullVaccinationDTO> fullyVaccinated = new ArrayList<>();
-        for (SnsUser snsUser: snsUsers) {
-            if(!snsUser.getUserVaccines().getUserVaccinesDto().isEmpty()){
-                for (UserVaccinesDTO userVaccine: snsUser.getUserVaccines().getUserVaccinesDto()) {
-                    if(userVaccine.endedVaccination()){
-                        LocalDate userLastDoseDate = userVaccine.lastDoseDate().toLocalDate();
-                        if(userLastDoseDate.isAfter(localDate)&&userLastDoseDate.isBefore(localDate2))
-                            fullyVaccinated.add(new FullVaccinationDTO(snsUser.getSnsNumber(),userVaccine.lastDoseDate().toLocalDate()));
-                    }
-                }
-            }
-        }
-        treatData(fullyVaccinated);
+        vacCenterController.exportStatistics(localDate,localDate2);
     }
 
-    private void treatData(List<FullVaccinationDTO> fullyVaccinated){
-
-    }
 }

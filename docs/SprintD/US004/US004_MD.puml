@@ -1,0 +1,86 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class VaccinationCenter {
+    -name
+    -address
+    -phoneNumber
+    -emailAddress
+    -faxNumber
+    -websiteAddress
+    -openingHours
+    -closingHours
+    -slotDuration
+    -maxNumVaxPerSlot
+    -capacity
+
+}
+
+class Receptionist{
+
+}
+
+class Company{
+
+}
+
+class SNSUser {
+    -snsNumber
+    -name
+    -age
+    -phoneNum
+    -email
+}
+
+class UserVaccines{
+
+}
+
+class VaccineType{
+    -disease
+
+}
+
+class Vaccine{
+    -name
+    -lotNum
+}
+
+
+class VaccinationProcess{
+    -recoveryPeriod
+}
+
+class AgeGroup{
+    -minAge
+    -maxAge
+}
+
+class Dose{
+    -doseNumber
+    -dosage
+}
+
+class TimeInterval{
+    -numDays
+}
+
+VaccinationCenter "1" -- "1" WaitingRoom: has >
+Vaccine "1" -- "1" VaccinationProcess: has >
+Vaccine "*" -- "1" VaccineType: has >
+VaccinationProcess "1" -- "*" AgeGroup: has >
+AgeGroup "1" -- "*" Dose: has >
+(AgeGroup, Dose) .. TimeInterval
+Receptionist "1" -- "1" WaitingRoom: updates >
+WaitingRoom "1" -- "*" SNSUser: has >
+Company "1" -- "*" SNSUser: has >
+Company "1" -- "*" Vaccine: has >
+Company "1" -- "*" VaccinationCenter: has >
+Company "1" -- "*" Employee: has >
+Employee "1" -- "1" Receptionist: is <
+SNSUser "1" -- "*" UserVaccines: has >
+UserVaccines "1" --"*" Vaccine: has >
+
+@enduml

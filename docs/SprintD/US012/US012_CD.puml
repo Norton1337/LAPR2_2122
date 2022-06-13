@@ -1,0 +1,31 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class VaccineType{
+    -disease
+}
+
+class Company {
+    -String designation;
+    -AuthFacade authFacade;
+   +Organization(name, VatNumber, webSite, phone, email, postalAddress, manager)
+   +createVaccineType(disease)
+ }
+
+
+ class VaccineTypeController {
+  +createVaccineType()
+ }
+
+ class CreateVaccineTypeUI {
+
+ }
+
+ CreateVaccineTypeUI ..> VaccineTypeController
+ VaccineTypeController ..> Company
+
+ Company "1" --> "*" VaccineType : owns
+
+
+
+@enduml

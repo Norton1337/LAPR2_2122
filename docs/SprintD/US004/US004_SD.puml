@@ -1,0 +1,87 @@
+@startuml
+autonumber
+
+actor "Receptionist" as REC
+
+participant ":ReceptionistUI" as UI
+participant ":ReceptionistController" as CTRL
+participant ":Company" as ORG
+
+participant ":VacCenter" as CENTER
+participant ":UserLastVaccineDTO" as DTO
+participant ":SnsUserList" as LIST
+participant ":SnsUser" as USER
+participant ":Vaccine" as VAC
+participant ":WaitingRoom" as ROOM
+
+activate REC
+REC -> UI : Starts to register arrival of SNS user at vaccination center
+activate UI
+UI -> CTRL: getVacCenterList()
+activate CTRL
+CTRL -> ORG: getVacCenterList()
+activate ORG
+ORG --> CTRL: vacCenterList
+deactivate ORG
+CTRL -> CTRL: vacCenterList.showAllVacCenters()
+CTRL --> UI: list of vacCenters
+deactivate CTRL
+
+UI --> REC : requests which vaccination center
+
+
+REC -> UI : chooses vaccination center
+
+UI --> REC: requests new operation
+REC -> UI: chooses to check-in sns
+UI --> REC: requests sns user's number
+REC -> UI: types requested data
+
+UI -> CTRL: checkIfUserExists(snsNumber)
+
+CTRL -> DTO**:create
+activate DTO
+DTO -> ORG: getUserBySNSNumber(snsNumber)
+activate ORG
+ORG -> LIST: getUserBySNSNumber(snsNumber)
+activate LIST
+LIST --> ORG: snsUser
+deactivate LIST
+ORG --> DTO: snsUser
+deactivate ORG
+DTO -> USER: getUserVaccines()
+activate USER
+USER -> VAC: lastVaccine()
+activate VAC
+VAC --> USER: vaccine
+
+USER --> DTO: vaccine
+DTO -> USER: getUserVaccines()
+USER -> VAC: lastVaccineDate()
+VAC --> USER: Date
+deactivate VAC
+USER --> DTO: Date
+deactivate USER
+deactivate DTO
+DTO --> CTRL: dto
+
+activate CTRL
+CTRL --> UI: informs if user exists
+UI -> CTRL: checkInUser(snsUser,vacCenter)
+CTRL -> CENTER: checkInSnsUser(snsUser)
+activate CENTER
+CENTER -> ROOM: checkInSnsUser(snsUser)
+activate ROOM
+ROOM --> CENTER: inform operation (in)success
+deactivate ROOM
+CENTER --> CTRL: inform operation (in)success
+deactivate CENTER
+CTRL --> UI: inform operation (in)success
+deactivate CTRL
+UI --> REC: inform operation (in)success
+deactivate UI
+
+deactivate REC
+
+
+@enduml

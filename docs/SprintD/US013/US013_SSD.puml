@@ -1,0 +1,39 @@
+@startuml
+autonumber
+actor "Administrator" as OE
+
+activate OE
+OE -> ":System" : asks to create a new vaccine
+activate ":System"
+":System" --> OE : requests data (name,lot number)
+deactivate ":System"
+
+OE -> ":System" : types requested data
+activate ":System"
+":System" --> OE : shows vaccine types list and ask to select one
+deactivate ":System"
+
+OE -> ":System" : selects a vaccine type
+activate ":System"
+":System" --> OE : shows all data and requests confirmation
+deactivate ":System"
+OE -> ":System" : confirms the data
+
+activate ":System"
+":System" --> OE : requests data for vaccination process \n(recoveryPeriod,minAge,maxAge,numDaysInterval)
+deactivate ":System"
+
+OE -> ":System" : types requested data
+activate ":System"
+":System" --> OE : shows all data and requests confirmation
+deactivate ":System"
+OE -> ":System" : confirms data
+activate ":System"
+":System" --> OE : informs operation success
+deactivate ":System"
+
+
+
+deactivate OE
+
+@enduml

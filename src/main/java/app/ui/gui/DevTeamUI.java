@@ -14,6 +14,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class DevTeamUI implements Initializable {
@@ -30,7 +31,7 @@ public class DevTeamUI implements Initializable {
     }
 
     public void btnGoBackMenu(ActionEvent actionEvent) throws IOException {
-        Parent adverseMenu = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/Login.fxml"));
+        Parent adverseMenu = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/Login.fxml")));
         Scene scene = new Scene(adverseMenu);
         Stage stage2 = new Stage();
         stage2.setScene(scene);

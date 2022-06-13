@@ -1,0 +1,52 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Administrator {
+}
+
+class Company {
+  -designation
+  -authFacade
+}
+
+class VaccineType {
+  -disease
+}
+
+class Vaccine {
+  -name
+  -lotNumber
+}
+
+class VaccinationProcess{
+    -recoveryPeriod
+}
+
+class AgeGroup{
+    -minAge
+    -maxAge
+}
+class Dose{
+    -doseNumber
+    -dosage
+}
+
+class TimeInterval{
+    -numDays
+}
+
+
+Company "1" -- "*" VaccineType: has >
+Company "1" -- "*" Vaccine: has >
+Company "1" -- "*" Administrator: has >
+Administrator "1" -- "*" VaccineType: creates >
+Vaccine "1" -- "1" VaccinationProcess: has >
+Vaccine "*" -- "1" VaccineType: has >
+VaccinationProcess "1" -- "*" AgeGroup: has >
+AgeGroup "1" -- "*" Dose: has >
+(AgeGroup, Dose) .. TimeInterval
+
+
+@enduml

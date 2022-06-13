@@ -1,0 +1,34 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class snsUser {
+   -snsNumber;
+   -name;
+   -age;
+   -phoneNumber;
+   -email;
+}
+
+class Company {
+   -String designation;
+   -AuthFacade authFacade;
+  +Organization(name, VatNumber, webSite, phone, email, postalAddress, manager)
+  +createsnsUser(snsNumber, name, age, phoneNumber, email)
+}
+
+
+class SnsUserController {
+ +registerUser()
+}
+
+class RegisterSNSUserUI {
+
+}
+
+RegisterSNSUserUI ..> SnsUserController
+SnsUserController ..> Company
+
+Company "1" --> "*" snsUser : owns
+
+
+@enduml

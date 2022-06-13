@@ -1,0 +1,140 @@
+@startuml
+autonumber
+actor "Administrator" as ADM
+
+participant ":VaccineUI" as UI
+
+participant ":VaccineController" as CTRL
+
+participant ":VaccineTypes" as VACTYPE
+
+participant ":Company" as ORG
+participant ":Vaccine" as VAC
+
+participant ":VaccinationProcess" as VACPRO
+participant ":AgeGroup" as AGEGROUP
+participant ":TimeInterval" as TIME
+participant ":Dose" as DOSE
+
+
+activate ADM
+ADM -> UI : asks to create a new vaccine
+activate UI
+UI --> ADM : requests data (name,lot number)
+deactivate UI
+
+ADM -> UI : types requested data
+activate UI
+
+UI -> CTRL : getVaccineTypes()
+activate CTRL
+
+CTRL -> VACTYPE : getVaccineTypes()
+activate VACTYPE
+|||
+VACTYPE --> CTRL : existing vaccine types
+
+CTRL --> UI : existing vaccine types
+deactivate VACTYPE
+deactivate CTRL
+
+UI --> ADM : shows vaccine types list and ask to select one
+deactivate VACTYPE
+deactivate UI
+
+ADM -> UI : selects a vaccine type
+activate UI
+
+UI -> CTRL : createVaccine(name,lotNumber, vaccineTypeId)
+activate CTRL
+
+CTRL -> VACTYPE : getVaccineTypeById(vaccineTypeID)
+activate VACTYPE
+|||
+VACTYPE --> CTRL : vaccine type
+|||
+deactivate VACTYPE
+
+CTRL -> ORG: createVaccine(name,lotNumber,vaccineType)
+
+activate ORG
+
+ORG --> VAC**: createVaccine(name,lotNumber,vaccineType)
+
+activate VAC
+VAC --> ORG : newVaccine
+
+deactivate VAC
+
+ORG -> ORG: validateVaccine(newVaccine)
+ORG --> CTRL : result
+
+
+CTRL --> UI: result
+
+UI --> ADM: shows all data and requests confirmation
+deactivate ORG
+deactivate VACTYPE
+deactivate CTRL
+deactivate UI
+
+ADM -> UI : confirms the data
+|||
+UI --> ADM : requests data for vaccination process \n(recoveryPeriod,minAge,maxAge,numDaysInterval,List of dosages)
+ADM -> UI : types requested data
+activate UI
+UI -> CTRL : saveVaccine()
+activate CTRL
+
+CTRL -> ORG : saveVaccine(vaccine)
+activate ORG
+
+ORG -> ORG: validateVaccine(vaccine)
+ORG -> ORG: addVaccine(vaccine)
+ORG --> CTRL : result
+CTRL --> UI: result
+
+UI -> CTRL: saveVaccinationProcess()
+CTRL -> ORG: saveVaccinationProcess()
+
+ORG -> VACPRO: createVaccinationProcess(recoveryPeriod)
+activate VACPRO
+
+VACPRO -> AGEGROUP: createAgeGroup(minAge,maxAge)
+activate AGEGROUP
+AGEGROUP --> VACPRO : result
+
+
+deactivate AGEGROUP
+VACPRO -> TIME: createTimeInterval(numDaysInterval)
+activate TIME
+TIME --> VACPRO: result
+deactivate TIME
+
+VACPRO -> DOSE: createDosages(List of dosages)
+activate DOSE
+DOSE -> VACPRO: result
+deactivate DOSE
+
+VACPRO --> ORG: result
+deactivate VACPRO
+
+ORG -> VAC: saveVaccinationProcess(vaccinationProcess)
+activate VAC
+VAC --> ORG: result
+deactivate VAC
+
+ORG --> CTRL: result
+deactivate ORG
+CTRL --> UI: result
+deactivate CTRL
+UI --> ADM: shows all data and requests confirmation
+ADM -> UI: confirms the data
+UI --> ADM: informs operation success
+
+
+deactivate UI
+
+deactivate ADM
+
+@enduml
