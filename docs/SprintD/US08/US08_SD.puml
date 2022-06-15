@@ -1,0 +1,59 @@
+@startuml
+autonumber
+
+actor "Nurse" as ADM
+
+participant ":NurseGUI" as UI
+participant ":registerAdministrationController" as CTRL
+participant ":Company" as ORG
+participant ":SnsUser" as USER
+
+
+activate ADM
+ADM -> UI :Clicks left button
+activate UI
+UI -> CTRL: loadFXML(registerAdministration)
+activate CTRL
+CTRL->ORG :initialize()
+activate ORG
+ORG --> CTRL: returns list of VaccineCenters
+deactivate ORG
+CTRL->UI: setItems()
+UI-> ADM: Shows Vaccenter options \n on the options box
+ADM-> UI: Chooses center
+UI->CTRL: getWaitingRoom()
+CTRL ->ORG: waitingRoom(Vaccenter)
+activate ORG
+ORG --> CTRL : returns users in waitingRoom
+deactivate ORG
+CTRL-> UI: setItems()
+UI->ADM: shows user options
+ADM-> UI: chooses user
+UI-> CTRL: registerAdministration()
+CTRL -> USER: getAge()
+activate USER
+USER--> CTRL :returns age
+deactivate USER
+CTRL-> ORG: getVaccines()
+activate ORG
+ORG--> CTRL:return vaccines
+deactivate ORG
+CTRL--> UI: returns vaccines
+UI-> ADM: shows vaccines user can take
+ADM-> UI: chooses vaccine
+UI-> CTRL: getDose()
+CTRL-->UI: returns doses user can take
+deactivate CTRL
+UI-> ADM: Shows doses
+ADM-> UI: chooses dose
+
+
+
+
+UI --> ADM: inform operation (in)success
+deactivate UI
+
+deactivate ADM
+
+
+@enduml

@@ -1,0 +1,35 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+
+
+class Nurse{
+-name
+-age
+-address
+}
+
+class Company{
+
+}
+
+class SNSUser {
+    -snsNumber
+    -name
+    -age
+    -phoneNum
+    -email
+}
+
+class userVaccines{}
+
+
+Company "1" --"*" Nurse: has >
+Company "1" --"*" SNSUser : has >
+Company "1" -- "*" Vaccine: owns >
+Nurse"1" --"*" userVaccines : updates >
+userVaccines"1" --"1" SNSUser : has <
+SNSUser "1"--"*" Vaccine: takes <
+@enduml

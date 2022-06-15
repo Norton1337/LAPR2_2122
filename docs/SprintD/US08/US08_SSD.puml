@@ -1,0 +1,36 @@
+@startuml
+autonumber
+actor "Nurse" as ADM
+
+activate ADM
+ADM -> ":System" : Request to register administration of a vaccine
+
+":System" --> ADM : asks for Vaccination Center
+
+ADM -> ":System": Types option
+
+
+":System" --> ADM : asks for Vaccination Center
+
+ADM -> ":System": Types option
+
+
+":System" --> ADM : asks for user
+
+ADM -> ":System": Types option
+
+
+":System" --> ADM : asks for vaccine
+
+ADM -> ":System": Types option
+
+
+":System" --> ADM : asks for dose
+ADM -> ":System": Types option
+
+":System" --> ADM : informs operation (in)success
+deactivate ":System"
+
+deactivate ADM
+
+@enduml

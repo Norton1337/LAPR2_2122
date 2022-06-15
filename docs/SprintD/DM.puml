@@ -133,6 +133,8 @@ Schedule "*" -- "1" VaccineType: has >
 
 SNSUser "1" -- "*" Schedule: creates >
 SNSUser "1" -- "*" UserVaccines: has >
+SNSUser "1" -- "*" Vaccine : takes <
+
 
 Administrator "1" -- "*" VaccinationCenter: manages >
 Administrator "1" -- "*" SNSUser: registers >

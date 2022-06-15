@@ -1,0 +1,83 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+
+
+class Company {
+    -String designation;
+    -AuthFacade authFacade;
+   +Organization(name, VatNumber, webSite, phone, email, postalAddress, manager)
+   +listVaccineType()
+   +createVaccine()
+ }
+
+
+ class registerAdministrationController {
+
+ }
+
+ class NurseGUI {
+
+ }
+
+
+class VaccinationProcess{
+    -recoveryPeriod
+}
+
+class AgeGroup{
+    -minAge
+    -maxAge
+}
+class Dose{
+    -doseNumber
+    -dosage
+}
+
+class VaccineType{
+    -disease
+}
+class Vaccine{
+    -name
+    -lotNumber
+}
+
+class TimeInterval{
+    -numDays
+}
+
+class VaccineCenters{
+-name
+-address
+-NumberofSlots
+}
+
+class waitingRoom{
+}
+
+class SNSuser {}
+
+
+ NurseGUI ..> registerAdministrationController
+ registerAdministrationController ..> Company
+
+ Company "1" --> "*" VaccineType : owns
+ Company "1" --> "*" Vaccine : owns
+ Company "1" --> "*" VaccineCenters: owns
+
+ VaccineCenters"1" --> "1" waitingRoom :owns
+
+ waitingRoom"1" --> "*" SNSuser: keeps
+
+ SNSuser "1" --> "*" Vaccine : takes
+
+ Vaccine "1" --> "1" VaccinationProcess: has
+ Vaccine "*" --> "1" VaccineType: has
+ VaccinationProcess "1" --> "*" AgeGroup: has
+ AgeGroup "1" --> "1" TimeInterval: has
+ AgeGroup "1" --> "*" Dose: has
+
+
+
+@enduml
