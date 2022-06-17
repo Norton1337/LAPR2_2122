@@ -2,12 +2,13 @@ package app.domain.model;
 
 import app.ui.console.SnsUserUI.RegisterSNSUserUI;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class SnsUserList {
-    private List<SnsUser> snsUserList = new ArrayList<>();
+    private final List<SnsUser> snsUserList = new ArrayList<>();
     public SnsUserList(){
     }
 
@@ -19,6 +20,22 @@ public class SnsUserList {
 
     public List<SnsUser> listSnsUser() {
         return this.snsUserList;
+    }
+
+    public List<FullVaccinationDTO> getFullyVaccinated(LocalDate localDate, LocalDate localDate2){
+        List<FullVaccinationDTO> fullyVaccinated = new ArrayList<>();
+        for (SnsUser snsUser: snsUserList) {
+            if(!snsUser.getUserVaccines().getUserVaccinesDto().isEmpty()){
+                for (UserVaccinesDTO userVaccine: snsUser.getUserVaccines().getUserVaccinesDto()) {
+                    if(userVaccine.endedVaccination()){
+                        LocalDate userLastDoseDate = userVaccine.lastDoseDate().toLocalDate();
+                        if(userLastDoseDate.isAfter(localDate)&&userLastDoseDate.isBefore(localDate2))
+                            fullyVaccinated.add(new FullVaccinationDTO(snsUser.getSnsNumber(),userVaccine.lastDoseDate().toLocalDate()));
+                    }
+                }
+            }
+        }
+        return fullyVaccinated;
     }
 
     public SnsUser getUserBySNSNumber(int snsNumber){

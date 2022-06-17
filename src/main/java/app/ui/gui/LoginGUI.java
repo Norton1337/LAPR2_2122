@@ -79,7 +79,7 @@ public class LoginGUI implements Initializable {
                 createStage(clientMenu);
             }
             else if(role.getDescription().equalsIgnoreCase("Receptionist")){
-                Parent receptionistMenu = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/ReceptionistMenu.fxml"));
+                Parent receptionistMenu = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/ReceptionistMenu.fxml")));
                 createStage(receptionistMenu);
             }
             else if(role.getDescription().equalsIgnoreCase("Center Coordinator")){

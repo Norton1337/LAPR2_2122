@@ -6,9 +6,7 @@ import app.domain.model.*;
 
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -77,7 +75,7 @@ public class CenterCoordinatorUI implements Runnable{
         String vacCenterName = vacCenter.getName();
         Scanner inInt = new Scanner(System.in);
         System.out.println("\n\n "+vacCenterName+" UI\n\n");
-        System.out.println("1-Export Vaccination Statistics");
+        System.out.println("1-Check Vaccination Statistics");
         System.out.println("0-Cancel");
         int answer = inInt.nextInt();
 
@@ -101,7 +99,20 @@ public class CenterCoordinatorUI implements Runnable{
         String date2 = inString.nextLine();
         LocalDate localDate2 = LocalDate.parse(date2, formatter);
 
-        vacCenterController.exportStatistics(localDate,localDate2);
+        List<FullVaccinationDTO> fullyVaccinatedList = vacCenterController.getFullyVaccinated(localDate,localDate2);
+        for (FullVaccinationDTO fullyVaccinated:fullyVaccinatedList) {
+            System.out.println(fullyVaccinated.snsNumber + " fully vaccinated on " + fullyVaccinated.dateOfFullVaccination);
+        }
+        Scanner inInt = new Scanner(System.in);
+        System.out.println("Do you want to export this data?\n1-Yes\n0-No");
+        int answer = inInt.nextInt();
+
+        switch(answer) {
+            case 1:
+                vacCenterController.treatVaccinationData(fullyVaccinatedList,localDate,localDate2);
+                break;
+            case 0: break;
+        }
     }
 
 }

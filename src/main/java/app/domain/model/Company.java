@@ -4,6 +4,7 @@ import jdk.jfr.Enabled;
 import pt.isep.lei.esoft.auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -149,6 +150,10 @@ public class Company {
     }
 
     public numberOfPeopleVaccinated getNOPVStore() {return numberOfPeopleVaccinated;}
-    
-    
+
+
+
+    public List<FullVaccinationDTO> getFullyVaccinated(LocalDate localDate, LocalDate localDate2) {
+        return this.snsUserList.getFullyVaccinated(localDate,localDate2);
+    }
 }
