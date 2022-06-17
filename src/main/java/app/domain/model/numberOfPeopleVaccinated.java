@@ -3,7 +3,6 @@ package app.domain.model;
 import app.controller.vaccinationCenterController.VacCenterController;
 
 import java.util.Date;
-import java.util.List;
 
 public class numberOfPeopleVaccinated {
     private static Date date;
@@ -39,7 +38,23 @@ public class numberOfPeopleVaccinated {
         return vacc.fullSNSUserVaccination().size();
     }
 
-
-        public void sendDataToCSV() {
+    public String escapeSpecialCharacters(String data) {
+        String escapedData = data.replaceAll("\\R", " ");
+        if (data.contains(",") || data.contains("\"") || data.contains("'")) {
+            data = data.replace("\"", "\"\"");
+            escapedData = "\"" + data + "\"";
+        }
+        return escapedData;
     }
+
+    public String sendDataToCSV() {
+       /* return Stream.of(numberOfVaccinations)
+                .map(this::escapeSpecialCharacters)
+                .collect(Collectors.joining(","));
+
+        */
+        return null;
+    }
+
+
 }
