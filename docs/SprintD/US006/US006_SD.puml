@@ -1,0 +1,79 @@
+@startuml US006_SD
+
+participant ":CountAdministrationsController" as ctrl
+participant "singleton:App" as app
+participant "company:Company" as cmp
+participant "admininistrations:AdministrationStore" as str
+participant "centers:VaccinationCenterStore" as cstr
+participant "administration:Administration" as adm
+participant "user:SNSUser" as usr
+participant "center:VaccinationCenter" as cntr
+participant "centerDTO:VaccinationCenterDTO" as cDTO
+participant "centerMapper:VaccinationCenterMapper" as cMapper
+participant "userMapper: SNSUserMapper" as sMapper
+participant "userDTO:SNSUserDTO" as sDTO
+participant "stats:VaccinationStatistics" as stats
+collections "statsList:List" as l
+
+autonumber
+
+note over ctrl
+This controller is created with an
+attribute called date of type Date
+end note
+->ctrl: countAdministrations(): List<VaccinationStatistics>
+activate ctrl
+ctrl -> app : __getInstance()__ : App
+ctrl-> app : getCompany() : Company
+activate app
+deactivate
+ctrl -> cmp : getAdministrationStore() : AdministrationStore
+activate cmp
+deactivate
+ctrl -> cmp : getVaccinationCenterStore() : VaccinationCenterStore
+activate cmp
+deactivate
+
+ctrl -> str : administrations = getAll() : List<Administration>
+activate str
+deactivate
+ctrl -> cstr : centers = getAll() : List<VaccinationCenter>
+activate cstr
+deactivate
+loop over administrations
+ctrl -> adm : admDate = getDate() : Date
+activate adm
+deactivate
+alt admDate is not same date as date
+ref over ctrl
+Remove administration from administrations
+end ref
+end alt
+end loop
+
+ctrl->l**:«create<VaccinationStatistics>»
+loop over centers as center
+ctrl->cMapper : centerDTO = toDTO(center) : VaccinationCenterDTO
+activate cMapper
+deactivate
+ctrl->stats**: «create(centerDTO)»
+loop over administrations
+ctrl->adm : admCenter = getCenter() : VaccinationCenter
+activate adm
+deactivate
+alt  admCenter is equal from center
+ctrl-> adm : user = getSNSUser() : SNSUSer
+activate adm
+deactivate
+ctrl-> sMapper : userDTO = toDTO(user) : SNSUserDTO
+activate sMapper
+deactivate
+ctrl->stats: addUser(userDTO) : void
+activate stats
+deactivate
+end alt
+end loop
+end loop
+deactivate ctrl
+
+@enduml

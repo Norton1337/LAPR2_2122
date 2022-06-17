@@ -1,0 +1,38 @@
+@startuml
+
+class CountAdministrationsUI{
+}
+class CountAdministrationsController{
+}
+class App{}
+class Company{}
+class VaccinationCenter {
+    -name
+    -address
+    -phoneNumber
+    -emailAddress
+    -faxNumber
+    -websiteAddress
+    -openingHours
+    -closingHours
+    -slotDuration
+    -maxNumVaxPerSlot
+    -capacity
+}
+class VaccinationCenterStore{}
+class SNSUser{}
+class Administration{}
+class AdministrationStore{}
+
+
+CountAdministrationsUI ..> CountAdministrationsController
+CountAdministrationsController ..> App
+CountAdministrationsController -> AdministrationStore
+App ..> Company
+Company ..> AdministrationStore
+AdministrationStore -> VaccinationCenterStore
+AdministrationStore -> Administration
+VaccinationCenterStore -> VaccinationCenter
+VaccinationCenter -> SNSUser
+
+@enduml

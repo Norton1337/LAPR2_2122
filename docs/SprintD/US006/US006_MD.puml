@@ -1,0 +1,30 @@
+@startuml
+class VaccinationCenter {
+    -name
+    -address
+    -phoneNumber
+    -emailAddress
+    -faxNumber
+    -websiteAddress
+    -openingHours
+    -closingHours
+    -slotDuration
+    -maxNumVaxPerSlot
+    -capacity
+
+}
+class Schedule{
+    -dateTime
+}
+class SNSUser {
+    -snsNumber
+    -name
+    -age
+    -phoneNum
+    -email
+}
+
+VaccinationCenter "1" -- "*" SNSUser: has >
+Schedule "*" -- "1" VaccinationCenter: has <
+
+@enduml

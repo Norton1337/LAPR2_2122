@@ -21,6 +21,7 @@ public class Company {
     private final List<Employee> employeesList;
     private final VacCenterList vacCenterList;
     private final SnsUserList snsUserList;
+    private app.domain.model.numberOfPeopleVaccinated numberOfPeopleVaccinated;
     //private List<Employee> employeesWithSpecificRoleList;
 
 
@@ -147,5 +148,7 @@ public class Company {
         return false;
     }
 
-
+    public numberOfPeopleVaccinated getNOPVStore() {return numberOfPeopleVaccinated;}
+    
+    
 }

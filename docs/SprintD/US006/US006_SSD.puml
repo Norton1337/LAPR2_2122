@@ -4,13 +4,10 @@ autonumber
 
 actor "DGS" as DGS
 activate DGS
-DGS -> System : Starts scheduling Vaccination
+DGS -> System : asks to see number of people vaccinated
 activate System
-System --> DGS : Requests Date, hour and Sns User information
-DGS --> System: Enters required Data
-System --> DGS : Shows the Data and requests confirmation
-DGS -> System : Confirms Data
-System --> DGS : Shows operation sucess
+System --> DGS : exports file with people vaccinated in each center
+
 deactivate System
 deactivate DGS
 

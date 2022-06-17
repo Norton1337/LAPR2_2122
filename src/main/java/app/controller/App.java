@@ -1,5 +1,13 @@
 package app.controller;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Properties;
+import java.util.Timer;
 
+import app.controller.numberOfPeopleVaccinatedController.numberOfPeopleVaccinatedController;
 import app.domain.model.Company;
 import app.domain.model.VacCenter;
 import app.domain.shared.Constants;
@@ -9,6 +17,7 @@ import pt.isep.lei.esoft.auth.UserSession;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Calendar;
 import java.util.Properties;
 
 /**
@@ -17,6 +26,7 @@ import java.util.Properties;
  */
 public class App {
 
+    private Timer randomTimer;
     private Company company;
     private AuthFacade authFacade;
 
@@ -26,6 +36,21 @@ public class App {
         this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION));
         this.authFacade = this.company.getAuthFacade();
         bootstrap();
+        props.setProperty("Timer.time","20");
+        try{
+            FileReader reader = new FileReader("src/main/resources/config/config.properties");
+            props.load(reader);
+            randomTimer = new Timer();
+            //Get config time
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.HOUR_OF_DAY,Integer.parseInt(props.getProperty("Timer.time")));
+            //    randomTimer.scheduleAtFixedRate(new numberOfPeopleVaccinatedController(),calendar.getTime(),24*60*60*1000L);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
     }
 
     public Company getCompany()
@@ -101,4 +126,5 @@ public class App {
         }
         return singleton;
     }
+
 }

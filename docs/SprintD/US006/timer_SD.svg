@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="308px" preserveAspectRatio="none" style="width:751px;height:308px;background:#FFFFFF;" version="1.1" viewBox="0 0 751 308" width="751px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="215.625" style="stroke:#181818;stroke-width:1.0;" width="10" x="128.5" y="47.6094"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="447.5" y="224.2344"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="133" x2="133" y1="37.6094" y2="272.2344"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="452" x2="452" y1="190.5781" y2="272.2344"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="625" x2="625" y1="147.9688" y2="272.2344"/><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="67" x="100" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="107" y="26.5332">app:App</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="67" x="100" y="271.2344"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="107" y="292.7676">app:App</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="85" x="410" y="271.2344"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="417" y="292.7676">timer:Timer</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="240" x="505" y="271.2344"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="512" y="292.7676">task:CountAdministrationsController</text><rect fill="#FFFFFF" height="215.625" style="stroke:#181818;stroke-width:1.0;" width="10" x="128.5" y="47.6094"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="447.5" y="224.2344"/><path d="M5,52.6094 L5,111.6094 L262,111.6094 L262,62.6094 L252,52.6094 L5,52.6094 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M252,52.6094 L252,62.6094 L262,62.6094 L252,52.6094 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="236" x="11" y="71.1045">App reads date from config file and has a</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="232" x="11" y="87.4561">constant of type long called NEXT_TIME</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="137" x="11" y="103.8076">that is equivalent to 24h</text><polygon fill="#181818" points="493,135.0156,503,139.0156,493,143.0156,497,139.0156" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="138.5" x2="499" y1="139.0156" y2="139.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="145.5" y="134.1592">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="118" x="156.5" y="134.1592">«create(date: Date)»</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="240" x="505" y="116.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="512" y="138.1973">task:CountAdministrationsController</text><polygon fill="#181818" points="398,177.625,408,181.625,398,185.625,402,181.625" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="138.5" x2="404" y1="181.625" y2="181.625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="145.5" y="176.7686">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="58" x="156.5" y="176.7686">«create()»</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="85" x="410" y="159.2734"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="417" y="180.8066">timer:Timer</text><polygon fill="#181818" points="435.5,220.2344,445.5,224.2344,435.5,228.2344,439.5,224.2344" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="138.5" x2="441.5" y1="224.2344" y2="224.2344"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="145.5" y="219.3779">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="279" x="156.5" y="219.3779">scheduleAtFixedRate(ta,date,NEXT_TIME) : void</text><!--MD5=[20e0caf2d3415caf701365146cc8d745]
+@startuml timer_SD
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+participant "app:App" as app
+participant "timer:Timer" as ti
+participant "task:CountAdministrationsController" as ta
+
+
+note over app
+App reads date from config file and has a
+constant of type long called NEXT_TIME
+that is equivalent to 24h
+end note
+
+activate app
+app -> ta** : «create(date: Date)»
+app-> ti**: «create()»
+app->ti:scheduleAtFixedRate(ta,date,NEXT_TIME) : void
+activate ti
+deactivate
+
+@enduml
+
+@startuml timer_SD
+
+autonumber
+
+participant "app:App" as app
+participant "timer:Timer" as ti
+participant "task:CountAdministrationsController" as ta
+
+
+note over app
+App reads date from config file and has a
+constant of type long called NEXT_TIME
+that is equivalent to 24h
+end note
+
+activate app
+app -> ta** : «create(date: Date)»
+app-> ti**: «create()»
+app->ti:scheduleAtFixedRate(ta,date,NEXT_TIME) : void
+activate ti
+deactivate
+
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 11:55:52 BST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>

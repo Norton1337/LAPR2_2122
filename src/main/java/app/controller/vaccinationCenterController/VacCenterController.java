@@ -8,12 +8,12 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 public class VacCenterController {
 
+    List<FullVaccinationDTO> fullyVaccinated = new ArrayList<>();
 
     private Company company;
     public VacCenterController(Company company) {
@@ -47,7 +47,7 @@ public class VacCenterController {
 
     public void exportStatistics(LocalDate localDate, LocalDate localDate2) throws FileNotFoundException {
         List<SnsUser> snsUsers = this.company.listSnsUser();
-        List<FullVaccinationDTO> fullyVaccinated = new ArrayList<>();
+
         for (SnsUser snsUser: snsUsers) {
             if(!snsUser.getUserVaccines().getUserVaccinesDto().isEmpty()){
                 for (UserVaccinesDTO userVaccine: snsUser.getUserVaccines().getUserVaccinesDto()) {
@@ -62,6 +62,9 @@ public class VacCenterController {
         treatData(fullyVaccinated);
     }
 
+    public List<FullVaccinationDTO> fullSNSUserVaccination(){
+        return fullyVaccinated;
+    }
     private void treatData(List<FullVaccinationDTO> fullyVaccinated) throws FileNotFoundException {
         List<LocalDate> differentDates = new ArrayList<>();
 

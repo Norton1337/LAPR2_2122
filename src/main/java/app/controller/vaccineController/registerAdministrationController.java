@@ -3,6 +3,7 @@ package app.controller.vaccineController;
 import app.controller.AuthController;
 import app.domain.model.*;
 import app.ui.console.MainMenuUI;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
