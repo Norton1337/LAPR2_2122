@@ -13,6 +13,8 @@
                 <Font size="43.0" />
             </font>
         </Text>
-      <Button fx:id="submitbtn" layoutX="225.0" layoutY="180.0" mnemonicParsing="false" onAction="#Submit" prefHeight="40.0" prefWidth="150.0" text="Export Statistics" />
+        <Button fx:id="submitbtn" layoutX="226.0" layoutY="221.0" mnemonicParsing="false" onAction="#Submit" prefHeight="40.0" prefWidth="150.0" text="Export Statistics" />
+        <Button fx:id="sortedArrivalTime" layoutX="167.0" layoutY="169.0" mnemonicParsing="false" onAction="#sortedArrivalTime" prefHeight="40.0" prefWidth="267.0" text="Import Data Legacy - Sorted By Arrival time" />
+        <Button fx:id="sortedLeavingTime" layoutX="167.0" layoutY="116.0" mnemonicParsing="false" onAction="#sortedLeavingTime" prefHeight="40.0" prefWidth="267.0" text="Import Data Legacy - Sorted by Leaving time" />
     </children>
 </AnchorPane>

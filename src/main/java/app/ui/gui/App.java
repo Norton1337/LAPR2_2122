@@ -30,7 +30,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/Login.fxml")));
-        primaryStage.initStyle(StageStyle.UNDECORATED);
+        //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(new Scene(root, 500, 400));
         primaryStage.setResizable(true);
         primaryStage.show();

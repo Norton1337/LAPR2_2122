@@ -2,6 +2,7 @@ package app.ui.gui;
 
 import app.controller.AuthController;
 import app.domain.model.Company;
+import app.domain.model.ParserCSV;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -68,5 +69,13 @@ public class centerCoordinatorMenu implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
 
+    }
+
+    public void sortedArrivalTime(ActionEvent actionEvent) {
+        ParserCSV.parsePerformanceData("data/performanceData.csv", true);
+    }
+
+    public void sortedLeavingTime(ActionEvent actionEvent) {
+        ParserCSV.parsePerformanceData("data/performanceData.csv", false);
     }
 }
