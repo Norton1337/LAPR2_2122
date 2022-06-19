@@ -43,9 +43,10 @@ public class exportStatistics implements Initializable {
 
     public List<FullVaccinationDTO> fullyVaccinated;
 
-    public void Submit(ActionEvent actionEvent) throws FileNotFoundException {
+    public void Submit(ActionEvent actionEvent) throws IOException {
         VacCenterController vacCenterController = new VacCenterController(this.company);
-       vacCenterController.treatVaccinationData(FullyVaccinatedData.fullVaccinationDTOS,FullyVaccinatedData.localDate1,FullyVaccinatedData.localDate2);
+        vacCenterController.treatVaccinationData(FullyVaccinatedData.fullVaccinationDTOS,FullyVaccinatedData.localDate1,FullyVaccinatedData.localDate2);
+        this.Return(actionEvent);
     }
 
     public void Return(ActionEvent actionEvent) throws IOException {
